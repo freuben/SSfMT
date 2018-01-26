@@ -1,0 +1,68 @@
+TITLE:: Software Systems for Music Technology
+summary:: SSfMT
+categories:: Tutorials/SSfMT
+
+section::Latest
+
+warning::All sessions will take place now in Room D003 (Sally Baldwing Buildings). Unfortunately, the MRC Teaching room is not in a good state so we will be meeting in D003 from now on.::
+
+note::Please bring your laptop and headphones to every session.::
+
+section::Module
+
+subsection::Module Information
+list::
+## link::SSfMT/Handbook::
+## link::SSfMT/Handbook#Module Overview#Module Overview::
+## link::SSfMT/Handbook#Assessment#Assessment::
+## link::SSfMT/Handbook#Course Materials#Course Materials::
+## link::SSfMT/Assignment Briefs::
+## link::SSfMT/moduleplan.htm##Module Plan::
+::
+subsection:: Lectures
+list::
+## link::SSfMT/Lectures/Introduction to Module::
+## link::SSfMT/Lectures/Electronic Music::
+## link::SSfMT/Lectures/Introduction to Programming::
+## link::SSfMT/Lectures/Computer Music::
+## link::SSfMT/Lectures/Digital Synthesis::
+::
+subsection:: Practicals
+list::
+## link::SSfMT/Practicals/Modular Synthesis 1::
+## link::SSfMT/Practicals/Modular Synthesis 2::
+## link::SSfMT/Practicals/Programming Concepts 1::
+## link::SSfMT/Practicals/Playing with UGens 1::
+## link::SSfMT/Practicals/Playing with UGens 2::
+::
+subsection:: Formative Tasks
+list::
+## link::SSfMT/Tasks/Task 1:: - Due 20/11
+## link::SSfMT/Tasks/Task 2:: - Due 1/12
+## link::SSfMT/Tasks/Task 3:: - Due 16/1
+## link::SSfMT/Tasks/Task 4:: - Due 19/1
+## link::SSfMT/Tasks/Task 5:: - Due 26/1
+## link::SSfMT/Tasks/Task 6:: - Due 2/2
+::
+subsection:: Study Guides
+list::
+## link::SSfMT/Study Guides/Synthesis in SuperCollider::
+::
+
+section::News
+
+emphasis::Software Systems for Music Technology:: related news, announcements, events, concerts, talks, links, etc:
+
+subsection::Events
+
+27/4/2018 - link::https://algorave.com/##CCCH::, Leeds
+
+subsection::Links
+
+list::
+## link::https://www.mstrcyork.org/##Music, Science and Technology Research Cluster (mstrc)::
+## link::https://www.mstrcyork.org/technologies-for-musical-creativity/##Technologies for Musical Creativity Group (TMCG)::
+## link::https://algorave.com/##Algoraves::
+## link::https://yorkshiresoundwomen.wordpress.com/##Yorkshire Sound Women Network (YSWN)::
+
+::

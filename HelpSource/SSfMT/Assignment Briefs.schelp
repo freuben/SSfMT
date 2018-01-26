@@ -1,0 +1,50 @@
+TITLE::Assignment Briefs
+summary:: Software Systems for Music Technology
+categories:: Tutorials/SSfMT
+related:: SSfMT, SSfMT/Handbook#Assessment#Assessment
+
+section::Assignment Briefs
+
+subsection::Formative Assessment
+numberedlist::
+##link::SSfMT/Assignments/Seminar Presentation::
+
+strong::Deadline::: Friday, 1 December 2017, from 9:30-13:15 (in class).
+
+::
+subsection::Summative Assessment
+numberedlist::
+##link::SSfMT/Assignments/Software System:: (50%)
+
+strong::Deadline::: Monday, 16 April 2017, by 16:00.
+
+##link::SSfMT/Assignments/Technical Report:: (40%)
+
+strong::Deadline::: Monday, 16 April 2017, by 16:00.
+
+##link::SSfMT/Assignments/Presentation##Presentation/Concert:: (10%)
+
+strong::Deadline::: Thursday, 26 April 2017, event from 13:15-17:15.
+::
+subsection::Assessment Criteria
+list::
+##Understanding of the synthesis/effects and control systems involved
+##Sophistication of synthesis/effects/control system implementation
+##Well presented, clear, commented code
+##Creativity and originality in composition/performance/installation
+##Critical analysis (algorithms, code, sound, interaction, etc.)
+##Appropriate and well thought-out use of interface (graphical and devices)
+##Suitable parameter mapping of controls
+##Evidence of research including suitable citations and bibliography
+::
+
+In your project you should respond to the following key points that will be evaluated in your emphasis::Software System::, emphasis::Technical Report:: and emphasis::Presenation/Concert:::
+list::
+##Concept/idea of project
+##Research
+##Programming skills
+##Realisation and creative or research outputs
+##Project management and collaboration
+##Presentation
+##Critical evaluation
+::

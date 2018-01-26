@@ -1,0 +1,447 @@
+TITLE:: Playing with UGens 2
+summary:: Software Systems for Music Technology
+categories:: Tutorials/SSfMT
+related:: SSfMT, SSfMT/Handbook#Course Materials#Course Materials, SSfMT/Practicals/Playing with UGens 1
+
+section::More UGens
+
+subsection::Klank - bank of resonators
+code::
+Klank.ar(specificationsArrayRef, input, freqscale, freqoffset, decayscale)
+::
+specificationsArrayRef - a Ref to an Array of three Arrays:
+list::
+	##frequencies - an Array of filter frequencies.
+	##amplitudes - an Array of filter amplitudes, or nil. If nil, then amplitudes default to 1.0
+	##ring times - an Array of 60 dB decay times for the filters.
+::
+If there are only two arrays in the main array, the ring times have been omitted
+
+
+Use code::` :: to prevent multi-channel expantion
+code::
+(
+{
+	Klank.ar(
+		`[[100,200,300,400,500,600,700,800, 900,1000],
+		  [0.05,0.2,0.04,0.06,0.11,0.01,0.15,0.03,0.15,0.02]],
+		PinkNoise.ar(MouseX.kr(0.01,0.1)))
+}.scope
+)
+
+
+Array.series(10,50,100)     // size, start, step
+Array.series(10,1.0,-0.1)
+(1.0,0.9..0.1)
+
+(
+{
+Klank.ar(
+	`[Array.series(10,50,134),
+	  Array.series(10,1.0,-0.05)],
+	PinkNoise.ar(0.01))
+}.scope
+)
+::
+
+To convert dBs (decibels) to amp values:
+code::
+		-6.dbamp
+::
+Using amps as dBs
+(freq and amps from formant table of Csound for alto E)
+code::
+(
+{
+Klank.ar(
+	`[[400,1600,2700,3300,4950],
+	  [0,-24,-30,-35,-60].dbamp.postln],
+	  PinkNoise.ar(0.01))
+}.scope
+)
+::
+Freq and amps from formant table of Csound for alto O
+code::
+(
+{
+Klank.ar(
+	`[[450,800,2830,3500,4950],
+	  [0,-9,-16,-28,-55].dbamp],
+	  PinkNoise.ar(0.01))
+}.scope
+)
+::
+Note:: look also at DynKlank (it is a dynamic Klank values of arrays can change)::
+
+subsection::Formlet
+FOF-like filter
+code::
+Formlet.ar(in, freq, attacktime, decaytime, mul, add)
+::
+Resonant filter with an impulse response similar to that of a sine wave with exponential decay.
+
+If the attacktime and  decaytime are the same, the signal is canceled.
+if attacktime > decaytime, the impulse response is inverted.
+code::
+{Formlet.ar(PinkNoise.ar(0.1), 1000,0.01,0.1)}.scope
+{Formlet.ar(Impulse.ar(20,0.5), 1000,0.01,0.1)}.scope  // Impulse maybe sounds
+::
+Band-limited impulse oscillator:
+code::
+Blip.ar(kfreq, numharmonics, mul, add)
+
+	{Blip.ar(100,100,0.5)}.scope
+
+	{Blip.ar(SinOsc.kr(5,0,20,300), 1000,0.4)}.scope
+::
+Modulate formant frequency with Blip input signal:
+code::
+(
+{
+	var in;
+	in = Blip.ar(SinOsc.kr(5,0,20,300), 1000, 0.1);
+	Formlet.ar(in, XLine.kr(1500,700,8, doneAction: 2), 0.005, 0.04);
+}.scope;
+)
+::
+
+subsection::Comb filter
+code::
+CombL.ar(in,maxdelaytime, delaytime, decaytime, mul, add);
+::
+code::CombL:: uses lineal delay (see also CombN, CombC)
+
+decayTime is the time that it takes for the echoes to diminish by 60 dB
+code::
+{ CombL.ar(WhiteNoise.ar(0.1), 0.01, 0.01, 0.2) }.scope;
+
+// modulate delayTime:
+{ CombL.ar(WhiteNoise.ar(0.1), 0.01, XLine.kr(0.001,0.01,10), 0.2) }.scope;
+::
+
+subsection::Karplus-Strong
+
+Using CombL for Karplus-Strong model:
+code::
+69.midicps   				 // frequency
+69.midicps.reciprocal  		// period
+
+(
+{
+	var burstEnv, att = 0, dec = 0.001;
+	var delayTime, decayTime = 10;
+	var midiPitch = 69;
+	delayTime = midiPitch.midicps.reciprocal;
+	burstEnv = EnvGen.kr(Env.perc(att, dec));
+	CombL.ar(WhiteNoise.ar(burstEnv), delayTime, delayTime, decayTime);
+}.scope
+)
+::
+
+Using Mouse as Trigger
+code::
+(
+{
+	var burstEnv, att = 0, dec = 0.05;  // now with more dec
+	var delayTime, decayTime = 10;
+	delayTime = MouseX.kr(36,74, lag: 0).midicps.reciprocal;  // MouseX controls note
+	burstEnv = EnvGen.kr(Env.perc(att, dec), gate: MouseButton.kr(0,1,0)); // MouseButton controls gate
+	CombL.ar(WhiteNoise.ar(burstEnv), delayTime, delayTime, decayTime);
+}.scope
+)
+::
+Try with different Noises (for example: code::PinkNoise, BrownNoise, GrayNoise::, etc)
+
+subsection::Stereo Panning
+
+code::Pan2.ar(signal, position)::   -1 is left, 1 is right
+code::
+{Pan2.ar(Dust.ar(50), MouseX.kr(-1,1))}.scope
+::
+
+Adding panning to karplus
+code::
+(
+{
+	var burstEnv, att = 0, dec = 0.05;
+	var delayTime, decayTime = 10;
+	delayTime = MouseX.kr(36,74, lag: 0).midicps.reciprocal;
+	burstEnv = EnvGen.kr(Env.perc(att, dec), gate: MouseButton.kr(0,1,0));
+	Pan2.ar(CombL.ar(WhiteNoise.ar(burstEnv), delayTime, delayTime, decayTime),
+		MouseX.kr(1,-1))
+}.scope
+)
+::
+subsection::Reverb
+
+Add reverb McCartney style to karplus
+an array of code::AllPass:: filter, without interpolation
+code::
+y = signal;
+Mix.fill(5,{ y = AllpassN.ar(y, 0.05,0.05.rand,3)});
+signal + (y * 0.0) // dry signal + signal with reverb
+
+(
+{
+	var burstEnv, att = 0.0, dec = 0.05, y, panned;
+	var delayTime, decayTime = 10;
+	delayTime = MouseX.kr(36,74, lag: 0).midicps.reciprocal;
+	burstEnv = EnvGen.kr(Env.perc(att, dec), gate: MouseButton.kr(0,1,0));
+	panned = Pan2.ar(CombL.ar(WhiteNoise.ar(burstEnv), delayTime, delayTime,
+		decayTime), MouseX.kr(1,-1));
+	y = panned;
+	Mix.fill(5, { y = AllpassN.ar(y, 0.05,0.05.rand, 1)});
+	panned + (y * 0.4)
+}.scope
+)
+::
+
+Note:: For better quality reverb look at: FreeVerb and FreeVerb2::
+
+section::Server
+Synthesis engine that receives commands (OSC) from the language (or some other application)
+
+list::
+
+##The synth server and its clients may be on the same machine or across a network
+
+##Synthesis definitions (code::SynthDef::) are loaded to the server
+
+##The server does not send or receive MIDI. It is expected that the client will send control messages.
+
+##Server uses trees of nodes (a network) which are either synths or groups
+
+##Synth is a collection of Unit Generators that run together
+##Group is a collection of nodes represented as a linked list
+##            (each node points to the next one).
+##      A new node is added to the head (the beginning) or the tail (the end) of the list.
+
+##The order of execution of SynthDefs can be important (e.g. a signal must first be
+made before it can be processed in a reverb unit).
+
+##The order of execution is determined with the order of the nodes (head or tail).
+
+##Audio can be routed from one SynthDef to another and to the Audio Output device via
+Audio Buffers (an array of 128 channels).
+::
+Control information can be routed with control buses (an array of 4096 buses)
+code::
+{SinOsc.ar(440,mul: 0.1)}.play(s);
+::
+the messages play and scope produce a synthesis definition (look at the post window):
+code::
+Synth("temp__46" : 1005)   // the name (in this case temporal name itgoing to be different than the one here) and the node of the synth definiton will appear in the post window)
+::
+Global variables (for example letters a z) can be used to store the synthesis definition
+code::
+a = {SinOsc.ar(440,mul: 0.1)}.play(s);
+b = {SinOsc.ar(660,mul: 0.1)}.play(s);
+c = {SinOsc.ar(740,mul: 0.1)}.play(s);
+
+a.free;
+b.free;
+c.free;
+::
+
+subsection::SynthDef
+
+A SynthDef gives a name to a specific patch. When loaded to the server, a SynthDef can receive messages to change the values thorough its arguments.
+
+Basic format:
+code::
+SynthDef("name", { Out.ar(busNumber,UGen});
+::
+code::"name":: can also be written as code::\name::
+code::
+(
+SynthDef("sines",{ |freq = 440,bus = 0|
+	Out.ar(bus,SinOsc.ar(freq,0,0.1));
+}).load(s);   // save definition and loaded to server (s)
+)
+::
+SynthDefs can be written to a file for later use, or written and loaded, or just loaded.
+
+The default directory for SynthDef files is synthdefs/
+
+(look at /Library/Application Support/SuperCollider/synthdefs/)
+
+list::
+##writeDefFile (dir)   writes the def as a file
+##load(server)  write the defFile and send a message to server to load the file
+##send(server)  compile the def and send it to server without writing it to a file
+##play(server)  compile def, sends to server, and creates one synth from this definition
+::
+Read help file of code::SynthDef:: to see more messages the class responds to.
+
+It is possible to send raw messages (OSC messages) directly to the server to make a new instance of a SynthDef or to change the argument value of an existing one.
+
+A description of the OSC messages available:
+	code::
+ [Server-Command-Reference]
+::
+
+A convenient way of creating instances of a synth is using the classes from the SC language
+code::
+Synth("sines")
+Synth("sines",[\freq, 200])
+
+
+z = Synth("sines");
+
+z.run(false);
+z.run(true);
+
+z.set("freq",600);
+z.set("bus", 1);
+z.set("freq",300, "bus",0);
+::
+To free the synth from the Server:
+code::
+z.free;
+::
+
+Another SynthDef:
+code::
+(
+SynthDef("filterNoise", {arg center = 2000;
+	Out.ar(0,Resonz.ar(WhiteNoise.ar(0.5), center,0.1));
+}).load(s);
+)
+
+a = Synth("filterNoise",[\center,500]);
+b = Synth("filteredNoise",[\center,1000]);
+a.free;
+b.free;
+::
+
+To browse available SynthDefs:
+code::
+(
+SynthDescLib.global.read;
+SynthDescLib.global.browse;
+)
+::
+
+subsection::Karplus-Strong as SynthDef
+code::
+(
+SynthDef("Karplus", {
+	arg midiPitch = 69, decayTime = 2.0;
+	var burstEnv, att = 0, dec = 0.001, signalOut, delayTime;
+	delayTime = midiPitch.midicps.reciprocal;
+	burstEnv = EnvGen.kr(Env.perc(att, dec));
+	signalOut = CombL.ar(WhiteNoise.ar(burstEnv), delayTime, delayTime, decayTime);
+	DetectSilence.ar(signalOut, doneAction: 2);
+	Out.ar(0,signalOut);
+}).send(s)
+)
+::
+From this example:
+list::
+##Note the different syntax in the argument declaration (code::arg ...::  ;   instead of code::|arg, arg|::)
+##Note the way code::Out:: is used
+##Note that we are just sending this code::SynthDef:: to the server and we are not writing it as a file
+##code::DetectSilence:: is a code::UGen:: that sends a code::doneAction:: the input is smaller than a threshold (to detect silence)
+::
+
+code::
+Synth("Karplus")
+Synth("Karplus", [\midiPitch, 60])   // uses a different node every time
+
+a = Synth("Karplus"); //the synth turns off because we use DetectSilence
+a.set(\midiPitch, 60);   // if we want to change the value, we have to do it very fast, before DetectSilence turns the synth off
+
+Synth("Karplus", [\midiPitch, rrand(50,80), \decayTime, 3.0]); //evaluate several times!
+::
+
+section::Quick Intro to Routines
+
+In SC to schedule events, we use Routines.
+
+code::Routine:: is a series of events, values or messages that are executed in a sequence. It’s a function that can be stopped, reset and restarted ones it is started.
+
+The yield or wait (wait just accepts simple numbers) messages waits a specitic amount of time between events.
+
+The simplest way to define a code::Routine:: is with the message code::.fork:: at the end of a function:
+
+code::
+(
+	{"hi".postln;
+		1.yield;
+		"bye".postln;
+	}.fork
+)
+::
+
+We can specify how many times we want to repeat the routine with another function within the routine:
+code::
+(
+	{
+		3.do{
+			"hi".postln;
+			0.2.yield;
+			"bye".postln;
+			0.3.yield;
+		}
+	}.fork
+)
+::
+
+We can ask the routine to repeat an infinate amount of time
+code::
+(
+	a = {
+		inf.do{
+			"hi".postln;
+			0.2.yield;
+			"bye".postln;
+			0.3.yield;
+		}
+	}.fork
+)
+::
+Note::Stop the sound with emphasis::cmd + .:: ::
+
+We can use the code:: .loop:: message instead of  code::inf.do::. We can assign the routine to a global variable, to stop and restart
+code::
+(
+	a = {
+		{
+			"hi".postln;
+			0.2.yield;
+			"bye".postln;
+			0.3.yield;
+		}.loop
+	}.fork
+)
+
+a.stop; //stop
+a.reset.play; //reset and play again
+::
+
+Note::We will come back to Routines and Scheduling later on.::
+
+Now, let's try a routine with the Karplus SynthDef:
+
+code::
+(
+a = {
+	inf.do{
+		4.do{
+			Synth("Karplus", [\midiPitch, rrand(40,80)]);
+			0.1.yield;
+			Synth("Karplus", [\midiPitch, rrand(40,80)]);
+			0.4.yield;
+			Synth("Karplus", [\midiPitch, rrand(40,80)]);
+			0.1.yield;
+		};
+		20.do{
+			Synth("Karplus", [\midiPitch, 100]);
+			0.05.yield;
+		}
+	}
+}.fork
+)
+a.stop;
+a.reset.play;
+::

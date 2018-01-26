@@ -1,0 +1,24 @@
+TITLE::Presentation
+summary:: Software Systems for Music Technology
+categories:: Tutorials/SSfMT
+related:: SSfMT, SSfMT/Assignment Briefs, SSfMT/Handbook#Assessment#Assessment
+
+section::Summative Assessment
+
+subsection::Presentation/Concert (10%)
+
+With the link::SSfMT/Assignments/Software System:: you will develop in SuperCollider, you will present a performance, improvisation, composition, installation or demonstration. You will work in groups to produce a piece of creative work that will last a minimum of an equivalent to 3-5 minutes per person (group of 2 = 6-10mins, group of 3 = 9-15mins). You will work in groups of 2 or 3, however every member of the group will use the Software System they developed individually. You will be responsible not only for your own work, but for making sure that the collaboration for your presentation is successful.
+
+You will be evaluated by the quality of the presentation, including how well prepared and rehearsed it is. Therefore, make sure that you prepare and rehearse as a group. Your Software System should run any serious problems. Gain levels should be stable and performance elements should be well executed. Think about the visual presentation of your creative work and how you use interface devices and their relationship to how the performance may look.
+
+The  performances/compositions/installations will be showcased during an event on the Deadline date. We will also have a technical rehearsal, time and date emphasis::TBC::.
+
+strong::Summary::
+list::
+##Present a performance, improvisation, composition, installation or demonstration with the Software System you developed in SuperCollider.
+##Work in groups of 2 or 3 to produce a piece of creative work that will last a minimum of an equivalent to 3-5 minutes per person
+##Rehearse and prepare your presentation to avoid any technical or performance related issues
+##Your presentation should showcase your understanding and implementation of the key topics covered in the module.
+##Gain levels should be stable and performance elements should be well executed.
+##Your performances/compositions/installations will be presented in an event at the end of the module.
+::

@@ -1,0 +1,172 @@
+TITLE::Computer Music
+summary:: Software Systems for Music Technology
+categories:: Tutorials/SSfMT
+related:: SSfMT, SSfMT/Lectures/Introduction to Programming
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.001.png#CSIRAC with Trevor Pearcey::
+code::
+"open https://theconversation.com/how-australia-played-the-worlds-first-music-on-a-computer-60381".unixCmd;
+::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.002.png#Instructions for CSIRAC music program by Thomas Cherry::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.003.png#Notes on CSIRAC music program by Thomas Cherry::
+code::
+//Australian documentary on CSIRAC
+"open https://youtu.be/yxDQSluWaMs".unixCmd;
+::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.004.png#CSIRAC today at Melbourne Museum::
+code::
+"open https://museumsvictoria.com.au/csirac/".unixCmd;
+::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.005.png#Ferranti Mark 1::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.006.png#Ferranti Mark 1 ::
+code::
+code::
+//First historical recording of computer music at the University of Manchester
+"open https://youtu.be/xLwjz0UR5_A".unixCmd;
+::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.007.png#Alan Turing::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.008.png#Benedict Cumberbatch as Alan Turing in The Imitation Game::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.009.png#Claude E. Shannon::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.010.png#Bell Laboratories::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.011.png#Bell Laboratories interior, Eero Saarinen (Architect)::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.012.png#Offices at Bell Laboratories::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.013.png#Max Mathews at Bell Labs::
+code::
+//Newman Guttman, The Silver Scale, 1957
+"open https://youtu.be/PM64-lqYyZ8".unixCmd
+::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.014.png#Max Mathews at Bell Labs::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.015.png#Max Mathews::
+code::
+//Max Mathews, Numerology, 1960
+"open https://youtu.be/hVmbthBYFaw".unixCmd;
+::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.016.png#IBM 704::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.017.png#IBM 704::
+code::
+//Daisy Bell (Bicycle Built for Two), 1961
+//Synthesised voice: John L. Kelly, Carol Lockbaum, et al.
+//Musical accompaniment: Max Mathews
+"open http://youtu.be/41U78QP8nBk".unixCmd;
+::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.018.png#Kelly-Lochbaum Vocal Tract Model::
+code::
+"open https://ccrma.stanford.edu/~jos/pasp/Singing_Kelly_Lochbaum_Vocal_Tract.html".unixCmd;
+::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.019.png#A Space Odyssey, 1968::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.020.png#HAL 9000::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.021.png#HAL 9000 Deactivation::
+code::
+"open http://youtu.be/c8N72t7aScY?t=2m20s".unixCmd;
+::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.022.png#Chess game, A Space Odyssey, 1968::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.023.png#The Turk::
+code::
+//Aaron Koblin, Bicycle Built for Two Thousand, made with Amazon’s Mechanical Turk
+"open http://www.bicyclebuiltfortwothousand.com/".unixCmd;
+::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.024.png#Max Mathews::
+code::
+//Graphic 1, with L. Rosler, 1968
+"open https://youtu.be/llnzK2H_HZo".unixCmd;
+::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.025.png#GROOVE system::
+code::
+//Laurie Spiegel, Drums, 1975 - created with GROOVE system
+"open https://youtu.be/6qhlvRm4iG4".unixCmd;
+::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.026.png#Max Mathews with Radio Baton::
+code::
+//Interview with Max Mathews & John Chowning
+"open http://youtu.be/Hloic1oBfug".unixCmd;
+//Radio Baton demonstration
+"open https://youtu.be/3ZOzUVD4oLg?t=5m52s".unixCmd;
+::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.027.png#Jean-Claude Rissett::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.028.png#"Little Boy"::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.029.png#Boeing B-29, Enola Gay::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.030.png#Hiroshima Atomic Bomb::
+code::
+//Jean-Claude Risset, Computer Suite From Little Boy, 1968
+"open https://youtu.be/RcX0ubvoZUA?t=57s".unixCmd;
+::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.031.png#M.C. Esher - Ascending and Descending::
+code::
+//Beck, Lonesome Tears, 2002
+"open https://youtu.be/mrTl5iUF6FY?t=3m15s".unixCmd;
+::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.032.png#Jean-Claude Rissett::
+code::
+//Jean-Claude Rissett, Mutations, 1969
+"open http://uniyork.naxosmusiclibrary.com.ezproxy.york.ac.uk/stream.asp?s=89558%2Funiyorknml09%2Frk4051%5F001".unixCmd;
+::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.033.png#Lejaren Hiller::
+code::
+//Lejaren Hiller, Illaic Suite, 1956
+"open https://youtu.be/QyqiSbbwHIs".unixCmd;
+::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.034.png#Lejaren Hiller and John Cage::
+code::
+//John Cage and Lejaren Hiller, HPSCHD, 1969
+"open http://youtu.be/t_hTxJpWITw".unixCmd;
+::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.035.png#Herbert Brün::
+code::
+//Herbert Brun, Infraudibles, 1968
+"open http://youtu.be/H3BL4tHSyTg".unixCmd;
+::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.036.png#Iannis Xenakis::
+code::
+//Iannis Xenakis, Metastasis, 1964
+"open https://youtu.be/SZazYFchLRI".unixCmd;
+//Iannis Xenakis, ST/10, 1962
+"open https://youtu.be/9XZjCy18qrA".unixCmd;
+::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.037.png#Gottfried Michael Koenig::
+code::
+//Gottfried Michael Koenig, Funktion Blau, 1969
+"open https://youtu.be/Yk7bXHeeKhI".unixCmd;
+::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.038.png#Peter Zinovieff with PDP-8 computer::
+code::
+//Documentary, What the Future Sounded Like, 2006
+"open http://youtu.be/8KkW8Ul7Q1I?t=10m26s".unixCmd;
+::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.039.png#John Chowning with Yamaha DX7::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.040.png#Yamaha DX7::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.041.png#John Chowning at CCRMA::
+code::
+//John Chowning, Turenas, 1972
+"open http://youtu.be/kSbTOB5ft5c".unixCmd;
+::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.042.png#John Chowning::
+code::
+//John Chowning, Stria, 1977
+"open http://youtu.be/988jPjs1gao".unixCmd;
+::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.043.png#Iannis Xenakis::
+code::
+//Iannis Xenakis, Polytope de Cluny, 1972-74
+"open https://youtu.be/nVx0PvK9TnQ".unixCmd;
+::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.044.png#Charles Dodge::
+code::
+//Charles Dodge, In Celebration, 1975
+"open http://youtu.be/mYvSfCvXhNM".unixCmd;
+::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.045.png#IRCAM::
+code::
+//Xavier Rodet, Queen of the Night, 1982
+"open http://anasynth.ircam.fr/home/english/media/singing-synthesis-chant-program".unixCmd;
+::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.046.png#VOCALOID::
+code::
+//Hatsune Miku and ryo, World is Mine, 2008
+"open https://youtu.be/jhl5afLEKdo".unixCmd;
+::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.047.png#Popular computers in 1980s::
+code::
+//Master Composer and Dr T’s Demo, 1988:
+"open http://youtu.be/hI8-oBgJFEY".unixCmd;
+::
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture4/Lecture4.048.png#Popular computers in 1990s::

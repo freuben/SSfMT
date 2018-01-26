@@ -1,0 +1,284 @@
+TITLE:: Handbook
+summary:: Software Systems for Music Technology
+categories:: Tutorials/SSfMT
+related:: SSfMT, SSfMT/Handbook#Course Materials#Course Materials, SSfMT/Handbook#Assessment#Assessment
+
+image::emsplay.png#EMS Studio in London::
+
+
+definitionlist::
+##BA(Hons) Music and Sound Recording
+##Department of Music
+##University of York
+## 2017-2018 ||
+::
+
+section::Module Outline
+list::
+##strong::Module::: Software Systems for Music Technology
+##strong::Module Credits::: 20
+##strong::Module Leader:::
+list::
+##strong::Name:::link::https://www.york.ac.uk/music/staff/academic/federico-reuben/##Dr Federico Reuben::
+##strong::Email::: federico.reuben@york.ac.uk
+##strong::Telephone::: (01904) 32 4132
+##strong::Office::: MRC/002 ::
+##strong::Dates::: November 11 2017 -  March 26 2018
+##strong::Spaces::: MRC Teaching Room
+##strong::Formative Assessment::: Seminar presentation (week 10 autumn term)
+##strong::Summative Assessment::: Software and Technical Report (week 1 summer term) and Seminar/Showcase (week 2 summer term)
+##strong::Contact Time::: 30 hours (lectures, practicals and seminars).
+##strong::Module Feedback::: Written feedback within 6 weeks of hand-in.
+::
+
+section::Module Overview
+
+subsection::Module Description
+
+This module will introduce audio software design and programming concepts for digital synthesis, signal processing and control systems. You will first be introduced to electronic music concepts and their historical and cultural context as well as gaining understanding and hands-on experience in modular synthesis with VCV Rack. You will then be introduced to digital systems and computer music: this will include learning the basics about computer programming and the history of making music with early computers. We will look at the principles of computer programming with a programming language called SuperCollider. SuperCollider is a powerful language for writing real-time audio processing, synthesis and control systems for music and audio. You will learn the basics of SuperCollider and you will design and build your own software systems for music performance, composition and production that will be demonstrated in practice at a showcasing event. This module therefore provides with various learning objectives that are valuable for your future: 1) it will give you an understanding of electronic and computer music principles and historical contexts, 2) you will start learning how to write computer code, which is a highly sought skill that can be transferable across many professions 3) you will have a better understanding of how computer music software works and how it is built, 4) you will gain practical and theoretical knowledge of sound synthesis and signal processing, 5) you will learn how to make your own software systems for performance, composition and production.
+
+subsection::Module Aims
+
+This module aims to:
+list::
+##provide an introduction to the state of the art in audio software systems for music technology, including the study of different approaches to software design, programming, and their historical context in computer music, popular music production and live electronic performance
+##describe and explain digital sound synthesis and signal processing techniques – how audio effects and synthesis techniques work and what factors influence their sonic character.
+##introduce control systems for music programming, for example those used in algorithmic composition.
+::
+subsection::Module Outcomes
+
+By the end of the taught part of the project all students should:
+list::
+##understand the basics of digital audio synthesis and audio signal processing.
+##have the ability to design and program bespoke software tools for performance, composition and production within computer music programming environments.
+::
+
+subsection::Attendance
+
+Attendance to all of the lectures and practicals is mandatory. Attendance will be monitored for each of these sessions. You are expected to be on time to all sessions.
+
+subsection::Communication
+
+Please check your university email regularly as this will be the primary form of communication between staff and students. Also, check the module materials regularly to access lecture slides, tutorials and exercises, information about deadlines, assignment briefs, reading materials, etc. Before contacting staff members about information, check the module handbook first as most of the module information will be available to you there.
+
+subsection::Independent study
+
+According to university regulations, the amount of time you should devote to private study for this module is a total of 109 hours, that is at least 8 hours per week outside your assessment preparation. Therefore, during this time you should be engaging with reading material, practicing programming skills, researching on related topics, experimenting with technology and code, etc. This of course does not include your time in seminars, workshops and tutorials. In addition to this, you will be expected to spend at least 60 hours for assessment preparation to prepare your final software, technical report and seminar/showcase. This is the very minimum amount of time of independent study expected from you to pass this module.
+
+subsection::Module Plan
+
+You can find the planned sessions including all lectures, practicals, presentations and assessment deadlines by following this link:
+list::
+##link::SSfMT/moduleplan.htm##Module Plan::
+::
+
+section::Assessment
+
+subsection::Assessment Methods
+list::
+##strong::Formative:::
+numberedlist::##link::SSfMT/Assignments/Seminar Presentation::.
+##link::SSfMT#Formative Tasks#Reading and practical tasks::.
+##Independent learning.
+::
+##strong::Summative:::
+numberedlist::##link::SSfMT/Assignments/Software System:: (50%) written in the SuperCollider programming language.
+##link::SSfMT/Assignments/Technical Report:: (40%)
+##link::SSfMT/Assignments/Presentation##Presentation/Concert:: (10%) using the software system.::
+
+You can read all the strong::Assignment Briefs and Criteria:: link::SSfMT/Assignment Briefs##here::.
+::
+subsection::Assessment Strategy
+
+The assessment criteria specific to this module will be considered and used as a measure to determine your achievement in the summative assessment process at the end of the module. emphasis::Lectures:: will provide the opportunity to gain new knowledge in electronic and computer music, programming and creative applications of technology. emphasis::Practicals:: will give you hands-on experience in synthesis, coding and digital audio technologies and the opportunity to creatively experiment with computers. emphasis::Formative assessment:: and emphasis::tasks:: will guide you through the learning process, ensuring you have the necessary knowledge and skills to complete the summative assessments. emphasis::Summative assessments:: will  be used to evaluate your performance in relation to module and programme outcomes. The emphasis::software system:: (submitted as computer code) will provide the opportunity to demonstrate technical and creative skills and your involvement with technically challenging problems, creative processes and research activities. The emphasis::technical report:: provides you with an opportunity to demonstrate your level of knowledge and understanding of relevant technical and musical concepts, debates and contexts and to present this information clearly. The emphasis::presentation/performance:: will allow you to demonstrate the software system in practice and within a musical context.
+
+subsection::Assessment Deadlines
+
+strong::Formative Assessment:::
+list::
+##strong::Seminar Presentation::: Friday, 1 December 2017, from 9:30-13:15 (in-class)
+::
+strong::Summative Assessment:::
+list::
+##strong::Software (50%)::: Monday, 16 April 2018 before 16:00.
+##strong::Technical Report (40%)::: Monday, 16 April 2018 before 16:00.
+##strong::Presentation / Performance (10%)::: Thursday 26 April 2018, event from 13:15-17:15.
+::
+
+subsection::What to hand in
+
+Hand in two copies of the work to be assessed on or before the due date. This will include two printed copies of the technical report and two USB drives with the Software System (code and supporting materials) and a PDF of the technical report. Whatever form your assessment takes, you must pay attention to all aspects of presentation, including the material appearance of your work.
+
+Each copy of your work must be in a separate cardboard wallet folder. Mark the folders on the front top right-hand corner. One folder must be marked with:
+list::
+##your name
+##your Exam Number – Y + 7-digits
+##the title of the module
+##the date
+::
+
+Mark your other folder with:
+list::
+##your exam number but not your name
+##the module title
+##the date
+::
+
+You leave off your name because you remain anonymous to the second marker. One folder goes to the module tutor who marks it and then gives it back. The other copy goes to the second marker and is retained for the final examination board in June of your 3rd year. We require two copies of 1st year work. CDs should be in a sleeve and similarly marked for identification. Materials must be presented to professional standards. All work must be clearly and carefully presented and labelled (your exam number must appear on every page). All essays, commentaries and technical reports must be word-processed. In addition, they must be:
+list::
+##double spaced
+##on A4 paper (printed on either one side or double-sided)
+::
+
+section:: Course Materials
+
+subsection::Resources
+
+strong::Library::: You will be expected to research and write a technical report for this module and this will require finding academic sources (books, journals, etc.) at the library.
+Online library resources: The library provides a series of online resources that you can access through the library website. You can reach the website by following this link::http://www.york.ac.uk/library/##link::.
+
+link::http://subjectguides.york.ac.uk/az.php##E-resources:: include a large collection of useful link::http://yorsearch.york.ac.uk/primo_library/libweb/action/dlSearch.do?&institution=44YORK&azSearch=true&fn=almaAzSearch&query=facet_atoz%2Cexact%2CA##e-journal:: articles and link::http://subjectguides.york.ac.uk/c.php?g=484076&p=3310241##e-books:: as well as other great music resources including streamable audio and video, electronic scores and databases that you can find by following this link::http://subjectguides.york.ac.uk/c.php?g=484041&p=3547049##link.
+::
+
+strong::Software::: For this module, you will need to download two pieces of software: emphasis::VCV Rack:: and emphasis::SuperCollider::. They are both open source and free!
+
+strong::VCV Rack::
+
+You can download emphasis::VCV Rack:: link::https://vcvrack.com/##here::.
+
+You should also download and install the third-party plugins, which you can find link::https://github.com/VCVRack/Rack/wiki/List-of-plugins##here::.
+
+The instuctions install the plugins can be found link::https://github.com/VCVRack/Rack/wiki/Installing-Plugins##here::.
+For Mac, you'll have to go to folder where the application is and press emphasis::ctr+click:: on the strong::Rack:: icon - then select emphasis::Show Package Contents::, this will open a folder in the finder. Then go to: emphasis::Contents->Resources->plugins::. Then unzip the emphasis::VCV Rack:: plugins and drop the unzipped folder contents into the emphasis::Contents/Resources/plugins:: folder.
+
+Go to link::SSfMT/Handbook#VCV Rack and Modular Links#VCV Rack and Modular Links:: for free patches and other interesting information.
+
+strong::SuperCollider::
+
+In this module, you'll learn how to work with the SuperCollider programming language. SuperCollider is free and you can download the latest version link::http://supercollider.github.io/download##here::.
+
+Once you download SuperCollider, you can access the module material by copying and pasting this line of code into a SuperCollider document:
+code::
+HelpBrowser.goTo("https://freuben.github.io/york/SSfMT");
+::
+Then, evaluate this code by putting the cursor on the same line and then pressing emphasis::shift+return::. If you don't want to do this every time you want to access the material and want the material to be there when you start SuperCollider, then go to: emphasis::File->Open startup file:: and paste the code there and save the file. Next time you open SuperCollider, the materials will be there!
+
+You should also download and install the link::https://github.com/supercollider/sc3-plugins/releases##Synthesis Plugins and Extensions::.
+
+For quick installation of the plugins in Mac, evaluate each line of code individually in SuperCollider:
+code::
+"open https://github.com/supercollider/sc3-plugins/releases/download/Version-3.8.0/sc3-plugins_OSX_SC3.8_692f92f.zip".unixCmd; //download current version of sc-plugins for mac
+("open " ++ "~/Downloads/sc3-plugins_OSX_SC3.8_692f92f.zip".standardizePath.shellQuote).unixCmd;
+//open zip file
+("mv " ++ "~/Downloads/SC3plugins/".standardizePath.shellQuote ++ " " ++ (Platform.userExtensionDir++ "/SC3plugins/").shellQuote).unixCmd; //move the folder to where it belongs
+::
+
+If that doesn't work, download the link::https://github.com/supercollider/sc3-plugins/releases##Synthesis Plugins and Extensions::, open them and install them in the Extensions folder. You can find out where this folder is by evaluating this code
+code::
+Platform.userExtensionDir;
+::
+Move the plugins folder to this directory. If the directory doesn't exist, then create it.
+
+Additionally, you might want to install some third-party packages called link::Classes/Quarks::.
+
+Go to link::SSfMT/Handbook#SuperCollider Links#SuperCollider Links:: for code examples and other interesting information.
+
+strong::Other software::
+
+You will need to use an application to send audio between different software applications for your first project. For this, you can use link::https://soundflower.en.softonic.com/mac##SoundFlower:: (Mac only), or link::http://jackaudio.org/downloads/##JACK:: (Win, Linux, Mac) or link::https://virtual-audio-cable.en.softonic.com/##Virtual Audio Cable:: (Windows).
+
+You might also want to use other software applications in this module.
+
+Here are some suggestions of software you might want to use:
+list::
+##Digital Audio Workstations (recording, editing, MIDI and processing):
+list::
+##link::http://www.reaper.fm/##Reaper:: (free - or very cheap...)
+##link::http://www.apple.com/uk/logic-pro/##Logic::
+##link::http://www.avid.com/pro-tools##ProTools::
+##link::https://www.ableton.com/##Ableton Live::
+::
+##Audio analysis:
+list::
+##link::http://www.klingbeil.com/spear/##Spear:: (free)
+##link::http://sonicvisualiser.org/##Sonic Visualiser:: (free)
+##link::https://www.izotope.com/en/products/mix/insight.html##iZotope Insight::
+::
+##Notation:
+list::
+##link::http://www.avid.com/sibelius##Sibelius::
+##link::http://www.finalemusic.com/##Finale::
+##link::http://lilypond.org/##Lilypond:: (free - texted based engraver)
+::
+##Visual programming for Audio
+list::
+##link::https://puredata.info/##Pure Data:: (free)
+##link::https://cycling74.com/##Max:: (free trail for 30 days)
+::
+##Visual programming for Visuals
+list::
+##link::https://cycling74.com/##Jitter:: (part of Max)
+::
+##Programming for Visuals
+list::
+##link::https://processing.org/##Processing:: (free)
+::
+##Live coding environments
+list::
+##link::https://toplap.org/tidal/##TidalCycles:: (free - sc based)
+##link::http://sonic-pi.net/##SonicPi:: (free - sc based)
+##link::http://gibber.cc/##Gibber:: (web browser - javascript based)
+::
+##Interactive Audio for Web Development (javascript)
+list::
+##link::https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API##Web Audio API::
+::
+##iPhone/iPad Apps:
+list::
+##link::https://itunes.apple.com/gb/app/touchosc/id288120394?mt=8##TouchOSC
+##link::https://itunes.apple.com/gb/app/lemur/id481290621?mt=8##Lemur
+::
+::
+
+strong::Equipment::: For this module you can use a variety of equipment with your computer. At the Department of Music we have a range of equipment and resources that you can book for work on this module. The stores at the MRC contain microphones, portable recorders, audio interfaces, video cameras, midi controllers, audio interfaces, other human interface devices (HIDs including joysticks, game controllers, etc.) as well as cables and accessories. You can use anything you like that is made available to you by the Department. You can use the computers in the studios if you have limited access to a laptop. You can book spaces and equipment online or talk to the Department technician Ben Eyes (ben.eyes@york.ac.uk).
+
+You may also use your own equipment for this module including your computers, audio interfaces, iPhones (or other smartphones), iPads (or other tablets), game controllers, etc. You can also purchase some specialist equipment if you desire to. If you want to continue working in computer music after this module, it might be a good idea to purchase some basic items like an audio interface and a midi controller. You can buy relatively cheap equipment for interfacing with your computer - here are some examples:
+list::
+##link::http://www.ebay.co.uk/sch/Audio-MIDI-Interfaces/123445/i.html?_from=R40&_nkw=audio+interface##audio interfaces @ ebay::
+##link::http://www.ebay.co.uk/sch/Pro-Audio-MIDI-Controllers/178896/bn_2315660/i.html##midi controllers @ ebay::
+##link::http://www.ebay.co.uk/sch/Video-Game-Controllers-Attachments/117042/bn_552150/i.html##game controllers @ ebay::
+##link::https://www.arduino.cc/##arduino::
+##link::http://bela.io/##bela::
+::
+If you need advice on what piece of equipment to buy for a particular purpose, talk to me or Ben, or any other technology enthusiast at the Department.
+
+subsection::Reading
+list::
+##SuperCollider link::Browse##helpfiles:: and link::Help##documentation::.
+##Russ, Martin (2009) link::http://yorsearch.york.ac.uk/44YORK:44YORK_ALMA_DS51242483270001381##Sound Synthesis and Sampling::. Focal Press
+##Dodge, Charles (1997) link::http://www.servus.at/campus/2011/music_class/class1/Dodge__Jerse_-_Computer_Music__Synthesis__Composition__and_Performance_2._ed.pdf##Computer music: synthesis, composition, and performance::. Schirmer Books.
+##Roads, Curtis (1996) link::http://yorsearch.york.ac.uk/44YORK:44YORK_ALMA_DS21213801710001381##The Computer Music Tutorial::. MIT Press.
+##Puckette, Miller (2006) link::http://msp.ucsd.edu/techniques/latest/book.pdf##The Theory and Technique of Electronic Music::. World Scientific Publishing.
+##Farnell, Andy (2010) link::http://yorsearch.york.ac.uk/44YORK:44YORK_ALMA_DS51280202840001381##Designing Sound::. MIT Press.
+##Zölzer, Udo (2011) link::http://yorsearch.york.ac.uk/44YORK:44YORK_ALMA_DS51241939260001381##DAFX::. Wiley.
+##Valle, Andrea (2016) link::https://www.amazon.co.uk/Introduction-SuperCollider-Andrea-Valle/dp/3832540172##Introduction to SuperCollider::. Logos Verlag Berlin GmbH.
+::
+
+subsection::SuperCollider Links
+list::
+##link::http://www.audiosynth.com/##Original SuperCollider page by James McCartney::
+##link::http://supercollider.github.io/pages##SuperCollider Wiki::
+##link::http://supercollider.github.io/community/mailing-lists##SuperCollider Mailing List - sc-users::
+##link::http://sccode.org/##SuperCollider code::
+##link::https://twitter.com/search?q=%23sc140 & open https://twitter.com/sc140tweets##sctweets::
+::
+
+subsection::VCV Rack and Modular Links
+list::
+##link::https://patchstorage.com/platform/vcv-rack/##VCV Rack Patches::
+##link::https://www.autodafe.net/virtual-instruments/vcv-rack-modules.html##Audiodafe modules::
+##link::https://learningmodular.com/##Learning Modular::
+##link::https://mutable-instruments.net/##Mutable Instruments::
+##link::https://www.befaco.org##Befaco::
+##link::http://synthtech.com/##Synthesis Technology::
+::

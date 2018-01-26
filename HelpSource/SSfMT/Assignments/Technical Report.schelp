@@ -1,0 +1,42 @@
+TITLE::Technical Report
+summary:: Software Systems for Music Technology
+categories:: Tutorials/SSfMT
+related:: SSfMT, SSfMT/Assignment Briefs, SSfMT/Handbook#Assessment#Assessment
+
+section::Summative Assessment
+
+subsection::Technical Report (40%)
+
+Your Technical Report will be a 1500-word piece of writing explaining the research and reasoning behind the link::SSfMT/Assignments/Software System:: you will develop and how you are planning to use it for your link::SSfMT/Assignments/Presentation##Presentation/Concert::. This piece of writing should include the things that you have done and considered, including a critical reflection on your work, with well-developed arguments grounded on research using reliable academic sources. It should be a serious piece of writing addressing technical and theoretical issues explaining your project (it should not only be a list of things that you've done). Even though you will be working in groups, it is crucial that your technical report focuses on your unique contribution and on your own code.
+
+In your technical report, you should seek to:
+list::
+##Explain the initial concept/idea for the project
+##Show evidence of the research you have done for the project
+##Explain the technical, creative (musical, artistic and aesthetic) and research processes and aims
+##Demonstrate that your collaboration with the other members in your group was successful
+##Present your technical report in an organised way and write clearly with use of standard academic language
+##Exhibit a fair amount of critical thinking about your project and that you critically evaluated the creative or research outputs (what are the conclusions?)
+::
+
+The work that you submit should include:
+
+numberedlist::
+##1500 word piece of writing (printed - 2 copies). In your technical report you should credit all of the people that were involved in the project (any collaborators), as well as any samples of music or sounds by other people that you used in your project.
+##2 USB drives containing the following:
+list::
+##PDF of the technical report.
+##Code and supporting materials (audio files, external libraries, etc.)
+::
+::
+
+strong::Summary::
+list::
+##Write a 1500-word Technical Report explaining the Software System you developed
+##The report should address technical and theoretical issues of your project that should include a research element
+##The report should include an explanation of your considerations, critical reflection, developed arguments based on academic sources
+##You should demonstrate critical thinking, technical competence and understanding of computer music and that your collaboration with your group was successful.
+##Your report should be presented to a professional standard, should contain a properly cited references and a bibliography, and should be written in standard academic language.
+##Your technical report should demonstrate an understanding of the key topics covered in the module.
+##Hand-in 2 written copies + 2 USB drives with code, technical report (pdf) and supporting materials
+::

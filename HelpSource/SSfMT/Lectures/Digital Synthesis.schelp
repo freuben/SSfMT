@@ -1,0 +1,897 @@
+TITLE:: Digital Synthesis
+summary:: Software Systems for Music Technology
+categories:: Tutorials/SSfMT
+related:: SSfMT, SSfMT/Practicals/Playing with UGens 1, SSfMT/Practicals/Playing with UGens 2
+
+section::Digital Synthesis
+
+Digital Synthesis is the generation of waveforms with units (values) usually generated digitally and then transferred through a D/A converter to produce sound. Waveforms can be generated through mathematical formulae, A/D conversion, analysis and resynthesis of recorded sound, and other non-standard techniques.
+
+subsection:: Some Synthesis Techniques
+list::
+##Sample-based synthesis
+##Additive synthesis
+##Subtractive synthesis
+##Wavetable synthesis
+##Amplitude Modulation (AM)
+##Frequency Modulation (FM)
+##Ring Modulation (RM)
+##Granular synthesis
+##Spectral Modelling
+##Physical Modelling
+##Non-standard synthesis
+::
+
+section::Sample-based synthesis
+
+Sample-based synthesis is based on recorded sounds and the manipulation of this information.
+
+subsection::Digital Playback
+
+Digital playback uses stored samples from a recording of a signal that has been digitalised through an A/D converter.
+
+image::http://federicoreuben.com/computerdotplay/guides/guide2/playback.png#Revox Studer Reel-to-Reel Tape Machine - old style playback!::
+
+subsection::Buffers
+Digital playback requires strong::Buffers::.
+
+image::http://federicoreuben.com/computerdotplay/guides/guide2/buffers.png#Buffers are like containers of digital floating point values::
+
+list::
+##A buffer is a container of data loaded into the computer memory
+##Often used to hold sampled audio
+##Can be used to hold other types of data as well
+##Available as an array of floating-point numbers
+##There are different ways in which we can use buffers including playback, envelope, wavetable
+::
+
+
+subsection::Buffers in SC
+list::
+##code::Buffers:: are arrays of 32-bit floating point values.
+##code::Buffers:: are on the server so that they can be used by synths.
+##code::Buffers:: need to be allocated, filled, and at some point freed.
+##code::Buffers:: can be allocated, loaded and freed while synthesis is running.
+##code::Buffers:: can be used for wave tables, sample buffers, delay lines, ...
+::
+
+The number of buffers on a server is set at boot time.
+code::
+o = ServerOptions.new;
+o.numBuffers;
+::
+
+subsection:: Types of Digital Playback
+
+2 main types:
+numberedlist::
+##Load sound file in its entirety into a buffer and then use a sample playback oscillator. This allows substantial playback manipulation.
+list::
+##In SC this is done with the code::PlayBuf:: UGen.
+::
+##Read directly from hard drive. Not as much playback manipulation. Uses a smaller buffer, which refreshes itself.
+list::
+##In SC this is done with the code::DiskIn:: UGen.
+::
+::
+
+subsection::PlayBuf
+code::PlayBuf:: is a UGen to listen/manipulate sound files.
+
+code::PlayBuf:: - sample playback oscillator
+(numChannels, bufnum, rate, trigger, startPos, loop)
+list::
+##emphasis::rate::: 1.0 is the server's sample rate, 2.0 is one octave up, 0.5 is one octave down
+##emphasis::loop:: = 1 is true, 0 is false
+::
+
+subsection::Buffer class
+
+Buffers can also be accessed with the code::Buffer:: class
+(which may be more convenient than the messaging style)
+
+code::Buffer.read::  allocates a buffer and reads a sound file into it.
+
+code::
+b = Buffer.read(s, "/Users/federicoreuben/Music/MastersExamples/11 Debra.aiff"); //change to your soundfile path
+
+{ PlayBuf.ar(2, b.bufnum, 1, loop: 1) }.scope
+::
+
+
+Mouse control of rate (transposition)
+code::
+{ PlayBuf.ar(1, b.bufnum, MouseX.kr(0.5,2), loop: 1) }.scope
+
+b.bufnum   // returns buffer number
+b.numChannels   // returns the number of channels in the buffer
+
+b.free  // return the memory and free buffer ID, IMPORTANT
+::
+
+
+code::BufRateScale::
+
+File being read into a buffer may have a different sample than SC is using
+
+
+code::BufRateScale.kr(bufnum):: returns a ratio to adjust the playback of the sound file (for example with different sampling rates).
+code::
+b = Buffer.read(s, "/Users/federicoreuben/Music/MastersExamples/04 4 bit 9d api+e+6 [126.26].wav"); //change to your sound file path
+::
+
+to scale the playback:
+code::
+{ PlayBuf.ar(2, b.bufnum, BufRateScale.kr(b.bufnum), loop: 1) }.scope
+
+b.free
+::
+
+code::BufFrames::
+
+code::BufFrames.kr(bufnum):: returns the current number of allocated frames
+
+it can be used to specify starting halfway through the buffer or some place else
+
+code::
+b = Buffer.loadDialog; //choose sound file
+(
+var start = 1/2;
+{ PlayBuf.ar(2, b.bufnum, BufRateScale.kr(b.bufnum),
+	startPos: BufFrames.kr(b.bufnum) * start, loop: 1)
+}.scope
+)
+::
+
+note that loop returns to the beginning in the above example
+
+a trigger (<= 0 to > 0) causes the playback to start from startPos
+
+using a trigger without looping
+
+code::Impulse.kr:: produces a trigger with a certain frequency
+
+code::
+(
+var start = 1/2;
+{ PlayBuf.ar(2, b.bufnum, BufRateScale.kr(b.bufnum),
+	Impulse.kr(1/3),
+	startPos: BufFrames.kr(b.bufnum) * start, loop: 0)
+}.scope
+)
+::
+Using a trigger with looping:
+
+the trigger should occur with a frequency that is
+
+(serverSampleRate / numberOfFrames) * rateScale
+
+Server's sample rate:
+code::
+s.sampleRate
+::
+
+code::
+(
+var start = 1/2;
+{ PlayBuf.ar(2, b.bufnum, BufRateScale.kr(b.bufnum),
+	Impulse.kr(s.sampleRate / (BufFrames.kr(b.bufnum) * start) *
+		BufRateScale.kr(b.bufnum)),
+	startPos: BufFrames.kr(b.bufnum) * start, loop: 1)
+}.scope
+)
+
+b.free
+::
+
+strong::Exercise:::
+numberedList::
+##Play with code::PlayBuf:: loading sound files (uncompressed) and changing the rate with different values.
+##Use another UGen to modulate the rate.
+##Add an envelope to PlayBuf with different random starting points.
+::
+
+code::
+//granular example
+b = Buffer.loadDialog; //choose sound file
+
+(
+SynthDef("envPlay", {arg freqMod=1;
+	var signal, env;
+	signal = PlayBuf.ar(2,b.bufnum, Rand(0.5,4), startPos: BufFrames.kr(b.bufnum)*Rand(0,1));
+	env = EnvGen.kr(Env.perc(0.01,0.1), doneAction:2);
+	Out.ar([0,1], signal * env * 0.2);
+}).send(s);
+)
+
+(
+{
+inf.do{
+Synth("envPlay");
+rrand(0.1,0.01).yield;
+}
+}.fork;
+)
+::
+
+subsection::DiskIn
+
+To continuously play longer sound file from disk. One buffer must be preloaded.
+
+using code::Buffer object::
+
+(server, path, startFrame, numChannels)
+
+code::
+b = Buffer.cueSoundFile(s, "/Users/federicoreuben/Music/MastersExamples/05 180db_ [130].wav", 0, 2); //or your own path
+
+x = { DiskIn.ar(2, b.bufnum) }.play;
+
+b.close;	// close file
+
+//try another file:
+
+code::
+b.cueSoundFile("/Users/federicoreuben/Music/MastersExamples/7 Broken Train.aiff", 0, 2); //or your own path
+
+x.free; b.close; b.free;	// close and free
+::
+
+subsection::Chipmunk conclusions:
+
+image::http://federicoreuben.com/computerdotplay/guides/guide2/chipmunks.png#Playback synthesis can sound like chipmunks!::
+
+list::
+##Playing with different rates of playback can be fun
+##Modulating rate with other UGens
+##Cutting, reversing, randomising playback, gains
+##Might introduce amplitude distortion, aliasing and spectral envelope shifting
+##Not the same as pitch shifting
+##‘munkchkinisation’ - chipmunk sounds
+::
+
+section::Fixed-Waveform Table-lookup Synthesis
+
+subsection::Wavetable-lookup Synthesis:
+list::
+##Digital Sound Synthesis by sending samples through digital-to-analog converter
+##For periodic sound, computer simply reads through a table of just one cycle of waveform in a list stored in memory (wavetable) again and again
+::
+
+image::http://federicoreuben.com/computerdotplay/guides/guide2/fixed waveform table-lookup.png#A Wavetable!::
+
+list::
+##Algorithm for Digital Oscillator
+##Oscillator has to resample the wavetable in order to generate different frequencies
+::
+
+subsection::Wavetable synthesis in SC
+
+code::Osc:: is a table-lookup oscillator.
+
+code::
+b = Buffer.alloc(s, 4096, 1); //buffer with 4096 values
+b.sine1(1.0!6, true, true, true); //add 6 harmonics
+b.plot
+
+{Osc.ar(b.bufnum, [80,80.2], 0, 0.2)}.play;
+
+b.sine1(1.0/[1,2,3,4,5,6], true, true, true); //add 6 harmonics with decaying amplitudes
+
+b.sine1(Array.rand(32,0,1), true, true, true); //change wavetable with random selection of partials
+b.plot
+
+b.sine1(Array.rand(16,0,1.0).postln, true, true, true); //change wavetable with random amplitude in partials
+
+{Osc.ar(b.bufnum, MouseX.kr(100,1000), 0, 0.2)}.play;
+
+{Osc.ar(b.bufnum, [80,80.2], 0, 0.2)}.play;
+
+b.sine1(1.0/(1..10), true, true, true);
+b.plot;
+
+b.sine1(1.0/(1..100), true, true, true);
+
+b.sine1(Array.fill(50,{[0,1].choose}), true, true, true); //evaluate several times
+b.plot;
+
+b.sine1([1,1,1,0,0,0,1,1,1,0,0,0,0,0,0.5,0.5,0.5], true, true, true);
+b.plot;
+//and now this
+(
+{50.do{b.sine1(Array.rand(32,0,1.0), true, true, true);
+	0.25.wait;
+}}.fork;
+)
+::
+
+
+section::Additive Synthesis
+
+list::
+##Synthesis technique based on summation of elementary waveforms to create more complex waveform.
+##Fixed-waveform Additive Synthesis (more economic with CPU)
+##Summation of different oscillators (more versatile but more expensive in CPU)
+::
+
+subsection::Additive through Wave shaping
+
+Wave shaping is a technique that uses a link::https://en.wikipedia.org/wiki/Transfer_function##transfer function:: to shape a signal.
+
+Wave shaping transfer functions are designed with link::https://en.wikipedia.org/wiki/Chebyshev_polynomials##Chebyshev Polynomials:: to generate harmonics.
+
+image::http://federicoreuben.com/computerdotplay/guides/guide2/chebyshev.png#Plot of Chebyshev Polynomials::
+
+strong::Example:::
+
+Fill a buffer with cheby specs: I want the first harmonic at 0.25 amplitude, second at 0.5, third at 0.25
+code::
+b = Buffer.alloc(s, 512, 1, {arg buf; buf.chebyMsg([0.25,0.5,0.25], false)});
+
+b.plot;
+
+(
+{
+    Shaper.ar(
+        b,
+        SinOsc.ar(440, 0.5pi, MouseX.kr(0,1)), //input cosine wave
+        0.5 //scale output down because otherwise it goes between -1.05 and 0.5, distorting...
+    )
+}.scope;
+)
+
+b.free;
+::
+
+You can also make your own arbitrary shapers:
+code::
+b = Buffer.alloc(s, 1024, 1);
+b.cheby([1, 0.5, 1, 0.125]);
+
+(
+{     var    sig = Shaper.ar(b, SinOsc.ar(440, 0, 0.4));
+    sig ! 2
+}.scope;
+)
+
+b.free;
+::
+You can calculate the transfer function as an array and then convert it to a wavetable:
+code::
+b = Buffer.alloc(s, 1024, 1);
+
+//size must be power of two plus 1
+t = Signal.chebyFill(513,[1, 0.5, 1, 0.125]);
+
+// linear function
+t.plot
+
+t = Signal.sineFill(513,[1, 0.5, 1, 0.125]);
+
+t.plot
+
+
+// t.asWavetableNoWrap will convert it to the official Wavetable format at next power of two size
+b.sendCollection(t.asWavetableNoWrap);  // may also use loadCollection here
+
+b.plot
+
+(
+{     var    sig = Shaper.ar(b, SinOsc.ar(440, 0, 0.4));
+    sig ! 2
+}.scope;
+)
+
+b.free;
+::
+
+Get creative with your transfer functions:
+code::
+b = Buffer.alloc(s, 1024, 1);
+
+// or, for an arbitrary transfer function, create the data at 1/2 buffer size + 1
+t = Signal.fill(513, { |i| i.linlin(0.0, 512.0, -1.0, 1.0) });
+
+// linear function
+t.plot
+
+// t.asWavetable will convert it to the official Wavetable format at twice the size
+b.sendCollection(t.asWavetableNoWrap);  // may also use loadCollection here
+
+// shaper has no effect because of the linear transfer function
+(
+{     var    sig = Shaper.ar(b, SinOsc.ar(440, 0, 0.4));
+    sig ! 2
+}.scope;
+)
+
+// now for a twist
+(
+a = Signal.fill(256, { |i|
+    var t = i/255.0;
+    t + (0.1 * (max(t, 0.1) - 0.1) * sin(2pi * t * 80 + sin(2pi * 25.6 * t)))
+})
+);
+
+a.plot
+
+d = (a.copy.reverse.neg) ++(Signal[0])++ a;
+
+d.plot
+
+d.size    //must be buffer size/2 + 1, so 513 is fine
+
+b.sendCollection(d.asWavetableNoWrap);  // may also use loadCollection here
+
+b.plot // wavetable format!
+
+// test shaper
+(
+{
+    Shaper.ar(
+        b,
+        SinOsc.ar(440, 0.5, MouseX.kr(0,0.9))
+    )
+}.scope
+)
+::
+
+Note::This examples are taken from the code::Shaper:: help file::
+
+subsection::Additive through Summation
+
+
+image::http://federicoreuben.com/computerdotplay/guides/guide2/summation.png#Additive Synthesis Patch::
+list::
+##Addition of partials
+##Overtones, Harmonics
+##Inharmonic partials
+##Fixed-wave/periodic signals are limited - they can only represent a steady-state spectrum
+##Acoustic sound has a time-varying spectrum (changes millisecond by millisecond)
+##A time-varying timbre is usually more tantalising to the ear than a constant spectrum (Grey, 1975)
+::
+
+strong::Example in SC::
+
+code::
+(
+SynthDef(\addSynth, {arg freq=40, amp=0.5, lag=30; var signal;
+	signal = SinOsc.ar(freq.lag(lag),0,amp.lag(lag));
+	Out.ar([0,1],signal)
+}).send(s);
+)
+
+(
+~arr = Array.fill(12, {rrand(200,10000)}).sort;
+~synthArr = [];
+~arr.do{|item|
+	~synthArr = ~synthArr.add(Synth(\addSynth, [\freq, item, \amp, 0.5/~arr.size]));
+}
+)
+
+~arr = [~arr[0]] ++ Array.fill(~arr.size-1,{rrand(~arr[0],~arr[0]*20)});
+~synthArr.do{|item, index| item.set(\freq, ~arr[index].postln)};
+::
+
+list::
+##Additive synthesis through the summation of various oscillators: code::Sine, Saw, Pulse, LTFri, Klang, DynKlang, etc.::
+##More flexibility and control
+::
+
+
+subsection::Time-varying Additive Synthesis
+list::
+##Changing mixture of sine waves over time usually results in more interesting and complex synthetic sounds
+##Each sine oscillator uses a different envelope to control amplitude
+##Frequency can also change depending on time-varying considerations (for example for ADSR spectra might change)
+::
+
+image::http://federicoreuben.com/computerdotplay/guides/guide2/trumpet.png#Time-varying spectrum plot of
+twelve partials of a trumpet tone::
+
+emphasis::Control Data:: for Additive Synthesis can include:
+list::
+##Driving functions for synthesis algorithms:
+##Imported/mapped from another domain
+##Generated by user constraints
+##Generated by interactive systems
+##Entered by user
+##Etc.
+::
+
+strong::Example in SC:::
+
+code::
+(
+SynthDef(\addSynth, {arg freq=40, amp=0.5, lag=0.01, atk=0.1,dec=0.2,sus=0.5,rel=1.0,gate=1, vol=0.05;
+	var signal, env;
+	signal = SinOsc.ar(freq.lag(lag),0,amp.lag(lag));
+	env = EnvGen.kr(Env.adsr(atk,dec,sus,rel), gate);
+	Out.ar([0,1],signal*env*vol);
+}).send(s);
+)
+
+(
+~size = 100; //100 change number of oscillators
+~arr = Array.fill(~size, {rrand(200,10000)}).sort;
+~envArr = [Array.rand(~size,0.1,2.6),Array.rand(~size,0.3,0.6), Array.rand(~size,0.8,1.0), Array.rand(~size,0.1,10.0)];
+~synthArr = [];
+~arr.do{|item, index|
+	~synthArr = ~synthArr.add(Synth(\addSynth, [\freq, item, \amp, (rrand(0.5,0.1)/(~arr.size)), \atk, ~envArr[0][index].postln, \dec, ~envArr[1][index], \sus, ~envArr[2][index], \rel, ~envArr[3][index], \lag, 0.1])); //change lag time
+};
+
+~rout = {inf.do{
+	~arr = [~arr[0]] ++ Array.fill(~arr.size-1,{rrand(~arr[0],~arr[0]*20)});
+	~synthArr.do{|item, index| item.set(\freq, ~arr[index], \amp, rrand(0.5,0.1))};
+	0.01.yield; //change wait time
+}}.fork;
+)
+
+
+~synthArr.do{|item, index| item.set(\gate, 0)};
+~rout.stop;
+
+~synthArr.do{|item, index| item.free};
+::
+
+strong::Additive Analysis/Resynthesis:: techniques can be used as a form of Additive Synthesis.
+
+image::http://federicoreuben.com/computerdotplay/guides/guide2/analysis_resynthesis.png#Analysis/Resynthesis Model::
+
+section::Multiple Wavetable Synthesis
+
+strong::Discussion:::
+list::
+##What characterises Fixed-wavetable Synthesis?
+##What is the main problem of Fixed-wavetable Oscillators?
+##Static timbre
+##Not very interesting or dynamic result
+##Challenge in synthesis:
+##How to generate interesting time-varying timbres?
+::
+
+subsection::Wavetable crossfading
+list::
+##Simple idea really: crossfade between 2 or more fixed waveforms during event
+##Sound “mutates” from one source to another over time
+::
+
+image::http://federicoreuben.com/computerdotplay/guides/guide2/wavetable_crossfading.png#Wavetable crossfading::
+
+code::
+(
+SynthDef(\wavecross1, {arg freq=440, attack=0.01, dec=0.4, sus=0.3, sus2=0.4, rel=2, vol=0.5;
+	var wave1, wave2, wave3, wave4;
+	var env1,env2,env3,env4, globalEnv;
+	env1 = EnvGen.kr(Env.new([0,1,0],[attack,dec]));
+	env2 = EnvGen.kr(Env.new([0,0,1,0],[attack,dec,sus]));
+	env3 = EnvGen.kr(Env.new([0,0,1,0],[attack+dec,sus,sus2]));
+	env4 = EnvGen.kr(Env.new([0,0,1,0],[attack+dec+sus,sus2,rel]));
+	globalEnv = EnvGen.kr(Env.new([0,1,0.5,0.5,0.4,0],[attack,dec,sus,sus2,rel]));
+
+	wave1 = Pulse.ar(freq)*env1;
+	wave2 = Formant.ar(freq)*env2;
+	wave3 = Saw.ar(freq)*env3;
+	wave4 = SinOsc.ar(freq)*env4;
+
+	////noise instead
+	//wave1 = WhiteNoise.ar*env1;
+	//wave2 = GrayNoise.ar*env2;
+	//wave3 = PinkNoise.ar*env3;
+	//wave4 = BrownNoise.ar*env4;
+
+	Out.ar(0, Pan2.ar((wave1 + wave2 + wave3 + wave4))*globalEnv*vol);
+}).send(s);
+)
+
+Synth(\wavecross1, [\freq, 440]);
+Synth(\wavecross1, [\freq, 880]);
+
+
+(
+{12.do{
+	Synth(\wavecross1, [\freq, (Scale.major.degrees+[60,72].choose).choose.midicps]);
+	0.8.yield;
+}}.fork;
+)
+
+(//detuned synths
+{24.do{
+	Synth(\wavecross1, [\freq, rrand(200,800), \attack, rrand(0.01,0.05), \dec, rrand(0.2,0.4), \sus,rrand(0.1,0.3), \sus2, rrand(0.1,0.3), \rel, rrand(0.4,2.1), \vol, rrand(0.1,0.5)]);
+	0.2.yield;
+}}.fork;
+)
+::
+
+list::
+##Wavetable crossfading is at core of compound synthesis, vector synthesis (Sequential Circuits, Korg, Yamaha), L/A (Linear Arithmetic synthesis, Roland)
+##Prophet VS (1985, Sequential Circuits) - crossfade between 4 different waveforms
+##Later synthesisers: users specify arbitrary number of waveforms during one event
+::
+
+image::http://federicoreuben.com/computerdotplay/guides/guide2/wavetable_crossfading2.png#Complex user specified wavetable crossfading::
+
+subsection::Wave stacking
+
+list::
+##Wavetable staking or wave stacking is a variation of additive synthesis, but:
+##Instead of sine waves, wave stacking uses different more complex signals (usually sampled) “stacked” together to create new timbre
+##Each waveform has its own amplitude envelope causing spectral changes during event
+##Storing waveforms in table-lookup oscillators
+##Also combined with wavetable crossfade for more internal motion
+##Wave stacking is similar to additive with different complex signals
+::
+
+image::http://federicoreuben.com/computerdotplay/guides/guide2/wavestacking.png#Wavestacking patch::
+
+code::
+(
+SynthDef(\wavestack1, {arg freq=440, attack=0.1, sus=0.3, rel=2, vol=0.5;
+	var globalEnv, harm, signal, envArr;
+	var wave1, wave2, wave3, wave4;
+	globalEnv = EnvGen.kr(Env.linen(attack,sus,rel), doneAction:2);
+	[attack,sus,rel].sum*[[0.3,0.6,0.1],[0.1,0.5,0.4],[0.01,0.3,0.69],[0.8,0.1,0.1]].do{|item| envArr = envArr.add(Env.linen(item[0], item[1], item[2]))};
+	harm = [1,2,3,4];
+	wave1 = Pulse.ar(freq*harm[3])*EnvGen.kr(envArr[0]);
+	wave2 = Formant.ar(freq*harm[1])*EnvGen.kr(envArr[1]);
+	wave3 = Saw.ar(freq*harm[2])*EnvGen.kr(envArr[2]);
+	wave4 = SinOsc.ar(freq*harm[0])*EnvGen.kr(envArr[3]);
+	signal = ((wave1 + wave2 + wave3 + wave4)/4)*globalEnv;
+	Out.ar(0, Pan2.ar(signal*vol*2));
+}).send(s);
+)
+
+Synth(\wavestack1, [\freq, 440]);
+Synth(\wavestack1, [\freq, 880]);
+
+(
+{12.do{
+	Synth(\wavestack1, [\freq, (Scale.major.degrees+[60,72].choose).choose.midicps]);
+	0.8.yield;
+}}.fork;
+)
+
+(//detuned synths
+{24.do{
+	Synth(\wavestack1, [\freq, rrand(200,800), \attack, rrand(0.01,0.05), \dec, rrand(0.2,0.4), \sus,rrand(0.1,0.3), \sus2, rrand(0.1,0.3), \rel, rrand(0.4,2.1), \vol, rrand(0.1,0.5)]);
+	0.2.yield;
+}}.fork;
+)
+::
+
+
+section::Modulation Synthesis
+list::
+##Modulation: control of an aspect of one signal with another
+##Modulated signal is the emphasis::carrier::
+##Controlling signal is the emphasis::modulator::
+##Modulation is nonlinear process - new frequency components can appear, we call them emphasis::sidebands::
+::
+
+strong::Bipolar and unipolar signals::
+list::
+##Polarity: positive and negative polarity (+1,-1)
+##Bipolar signals have both positive and negative excursion around 0
+##Unipolar signal a constant has been added (range above 0)
+##Difference between RM and AM is that RM modulates two bipolar signals which AM modulates a bipolar with a unipolar signal
+::
+
+image::http://federicoreuben.com/computerdotplay/guides/guide2/bipolar_unipolar.png#Biploar vs unipolar signals::
+
+subsection::Ring Modulation (RM)
+list::
+##Theoretically a form of AM.
+##Ring Modulation (RM) is a straight multiplication of two bipolar signals. RM is symmetric (carrier and modulator are the same)
+##RingMod = C x M (Ring Modulation = Carrier signal x Modulation signal)
+##If M is bellow 20Hz = tremolo effect
+##At higher frequencies:
+list::
+##Carrier disappears
+##For each sinusoidal component in the carrier, the modulator contributes two sidebands: the sum and the ##difference of C and M
+##Phases of output are also the sum and difference of phases of C and M.
+::
+##If modulation frequency is higher than carrier frequency, negative frequencies occur. Negative frequency converts into positive mirror-image (with phase change)
+::
+
+image::http://federicoreuben.com/computerdotplay/guides/guide2/ring1.png#Ring Modulation::
+
+Create a frequency analyser:
+code::
+FreqScope.new(400, 200, 0);
+::
+Simple ring modulation:
+code::
+{SinOsc.ar(440,0,SinOsc.ar(Line.kr(1,10,20)))*0.5}.scope; //low freq ring modulation causes tremolo
+::
+This is the same (a multiplication of two bipolar signals):
+code::
+{SinOsc.ar(440,0,0.5)*SinOsc.ar(Line.kr(1,10,20))}.scope; //low freq ring modulation causes tremolo
+::
+
+With a sound file:
+code::
+b = Buffer.loadDialog;
+
+{PlayBuf.ar(1, b.bufnum)*SinOsc.ar(10)}.play //low freq causes tremolo
+
+{PlayBuf.ar(1, b.bufnum)*SinOsc.ar(440)}.play //high freq causes sidebands
+
+(
+{var carrier, modulator;
+	carrier = 1000;
+	modulator = 400;
+	SinOsc.ar(carrier,0,SinOsc.ar(modulator));
+}.scope;
+)
+::
+Side bands result in: emphasis::sum of C and M (1000+400=1400) and difference of C and M (1000-400=600)::
+
+code::
+(
+{var carrier, modulator;
+	carrier = 100;
+	modulator = 400;
+	SinOsc.ar(carrier,0,SinOsc.ar(modulator));
+}.scope;
+)
+::
+Side bands result in: emphasis::sum of C and M (100+400=500) and difference of C and M (100-400=-300) - negative frequencies change the sign of the phase of signal::
+
+code::
+(
+{var carrier, modulator;
+	carrier = 100;
+	modulator = 400;
+	SinOsc.ar(carrier,0,SinOsc.ar(modulator))+SinOsc.ar(300,MouseX.kr(0,-0.5pi));
+}.scope;
+)
+::
+Harmonic sidebands:
+code::
+{(SinOsc.ar(220,0,0.25)+SinOsc.ar(440,0,0.25))*SinOsc.ar(880)}.scope; C and M are within harmonic ratios
+::
+Inharmonic sidebands:
+code::
+{(SinOsc.ar(100,0,0.25)+SinOsc.ar(380,0,0.25))*SinOsc.ar(775)}.scope;
+::
+
+image::http://federicoreuben.com/computerdotplay/guides/guide2/ring2.png#Sidebands in Ring Modulation::
+
+subsection::Amplitude Modulation (AM):
+list::
+##Unipolar
+##Like RM, AM generates a pair of sidebands for each sinusoidal component in the carrier and modulator
+##Sidebands are separated from the carrier by the distance corresponding to the inverse of the period of the modulator.
+##AM is the same result of RM + Carrier frequency
+::
+
+code::
+(
+{var carrier, modulator;
+	carrier = 500;
+	modulator = 50;
+	SinOsc.ar(carrier,0,SinOsc.ar(modulator, add:1, mul:0.5))*0.5;
+}.scope;
+)
+::
+Side bands result in: emphasis::sum of C and M (1000+400=1400) and difference of C and M (1000-400=600) + C (1000)::
+code::
+(
+{var carrier, modulator;
+	carrier = 1000;
+	modulator = 400;
+	SinOsc.ar(carrier,0,SinOsc.ar(modulator, add:1, mul:0.5))*0.5;
+}.scope;
+)
+::
+In AM, high frequency causes sidebands but also maintains carrier frequency:
+code::
+b = Buffer.loadDialog;
+{PlayBuf.ar(1, b.bufnum)*SinOsc.ar(440, add:1, mul:0.5)}.play
+::
+In RM, high frequency causes sidebands:
+code::
+{PlayBuf.ar(1, b.bufnum)*SinOsc.ar(440)}.play
+::
+
+
+subsection::Frequency Modulation (FM)
+list::
+##FM not a technique but a series of methods
+##PM (Phase modulation) and FM are virtually identical cases of angle modulation. Only difference is that the amplitudes generated by two methods are slightly different
+::
+
+image::http://federicoreuben.com/computerdotplay/guides/guide2/fm1.png#Simple Frequency Modulation Patch::
+
+list::
+##Plug the modulator to the carrier frequency
+##Carrier Frequency C
+##Modulation Frequency M
+::
+
+image::http://federicoreuben.com/computerdotplay/guides/guide2/fm2.png#FM sidebands::
+
+list::
+##FM generates sidebands around C Freq
+##Each sideband spreads out at a distance equal to a multiple of the modulating frequency
+##The position of sidebands depends on ratio of carrier and modulation frequency
+##When ratio is a simple integer (e.g. 4:1), then FM generates harmonic spectra
+##When ratio is not a simple integer (e.g. 8:2.1), then FM generates inharmonic spectra
+::
+
+image::http://federicoreuben.com/computerdotplay/guides/guide2/fm3.png#FM sidebands::
+
+list::
+##Modulation index and bandwidth
+##Modulation index = frequency deviation / modulator frequency (I = D/M)
+##As I increases, so does sidebands and energy is “stolen” for carrier and distributed in sidebands
+##Frequencies above Nyquist frequency are reflected as well (folds over - aliases)
+##Lower sidebands (bellow 0Hz reflect back at 180 degree phase-inverted form)
+##Negative frequency components add richness to lower-frequency portion of spectrum
+##Amplitude of individual sideband components vary according to Bessel functions
+::
+
+image::http://federicoreuben.com/computerdotplay/guides/guide2/fm4.png#3d graph of Bessel functions as
+function of modulation index::
+
+strong::FM in SC:::
+
+
+Can be done (without envelope) in the following way:
+code::
+(
+var carrierFreq = 400, modFreq = 50, deviation = 100;
+{	SinOsc.ar(carrierFreq + SinOsc.ar(modFreq, mul: deviation),
+	mul: 0.3);
+}.scope
+)
+::
+the same can be expressed:
+code::
+(
+var carrierFreq = 400, modFreq = 50, deviation = 100;
+{SinOsc.ar(SinOsc.ar(modFreq,mul: deviation, add: carrierFreq),
+	mul: 0.3);
+}.scope
+)
+::
+list::
+##link::https://en.wikipedia.org/wiki/John_Chowning##John Chowning:: (1967)
+##link::https://en.wikipedia.org/wiki/Yamaha_DX7##Yamaha DX7::
+##Cheap in CPU
+::
+image::http://federicoreuben.com/computerdotplay/guides/guide2/fm5.png#Yamaha DX7::
+
+subsection::Phase modulation
+
+Similar to FM, but we modulate the phase instead of the frequency:
+
+code::PMOsc.ar(carfreq, modfreq, index, modphase, mul, add)::
+list::
+##emphasis::carfreq:: - carrier frequency in cycles per second.
+##emphasis::modfreq:: - modulator frequency in cycles per second.
+##emphasis::index:: is modulation index in radians
+##emphasis::modphase:: a modulation input for the modulator phase in radians
+::
+code::
+{ PMOsc.ar(Line.kr(600, 900, 5), 600, 3, 0, 0.1) }.play; // modulates carfreq
+
+{ PMOsc.ar(300, Line.kr(600, 900, 5), 3, 0, 0.1) }.play; // modulates modfreq
+
+{ PMOsc.ar(300, 550, Line.ar(0,20,8), 0, 0.1) }.play; // modulates index
+
+(
+var carrierFreq = 400, modFreq = 50, index = 3, decayTime = 5;
+{ EnvGen.kr(Env.perc(0.001,decayTime,0.2),1,doneAction: 2) *
+	PMOsc.ar(carrierFreq, modFreq, index,0);
+}.scope
+)
+
+(
+var carrierFreq = 400, modFreq,cmRatio = 1.5, index = 3, decayTime = 5;
+modFreq = (carrierFreq * cmRatio.reciprocal).postln;
+{ EnvGen.kr(Env.perc(0.001,decayTime,0.2),1,doneAction: 2) *
+	PMOsc.ar(carrierFreq, modFreq, index,0);
+}.scope
+)
+::

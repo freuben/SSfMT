@@ -1,0 +1,294 @@
+TITLE:: Electronic Music
+summary:: Software Systems for Music Technology
+categories:: Tutorials/SSfMT
+related:: SSfMT, SSfMT/Lectures/Introduction to Module, SSfMT/Practicals/Modular Synthesis 2
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.001.png#Musical Telegraph, Elisha Gray, 1874::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.002.png#Telharmonium, Thaddeus Cahill, 1897, 1908::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.003.png#Telharmonium, dynamo tone generators and switch bay loom::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.004.png#Telharmonium, tone wheel generator::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.005.png#Theremin, Léon Theremin, 1920::
+
+link::http://youtu.be/w5qf9O6c20o##Theremin demonstrates the Theremin::
+
+link::http://youtu.be/j0c7p5geJZs##Clara Rockmore, Summertime::
+
+link::http://youtu.be/pSzTPGlNa5U##Clara Rockmore, The Swan::
+
+link::http://youtu.be/qjKUXn3WI2E##Lucie Bigelow Rosen::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.006.png#Terpsitone, Léon Theremin, 1932::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.007.png#Ondes Martenot, Maurice Martenot, 1928::
+
+link::http://youtu.be/Yy9UBjrUjwo##Jean Laurendeau demonstrates Ondes Martenot::
+
+link:: http://youtu.be/Tv67YkOWJNA?t=2m22s##Messiaen, Turangalîla Symphonie, "Joie du Sang des Étoiles", 1946-48::
+
+link::http://www.youtube.com/watch?v=chE1_g3GAWw&feature=youtu.be&t=2m50s##Radiohead, How To Disappear Completely, Kid A, 2000::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.008.png#Oskar Sala playing the Trautonium, Friedrich Trautwein, 1929::
+
+link::https://youtu.be/kvg7H0co5Rw?t=6m31s##Paul Hindemith, Concertino for Trautonium and Strings, 1931::
+
+link::http://youtu.be/4zHaQPyG7u4?t=5s##Oskar Sala improvising on the Mixtur-Trautonium::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.009.png#Westdeutscher Rundfunk Electronic Music Studio, Cologne, 1951::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.010.png#WDR studio equipment::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.011.png#Oscillators (up left), Ring modulator (up right) Feedback filter (down left), Tone generator (down right) ::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.012.png#Karlheinz Stockhausen at WDR studio::
+
+link::https://youtu.be/1GoUzk6fQAA##Stockhausen, Studie I, 1953::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.013.png#Karlheinz Stockhausen, Studie II score, 1954::
+
+link::https://youtu.be/bwj6ZptPnDo##Stockhausen, Studie II, 1954::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.014.png#Forbidden Planet poster, 1956::
+
+link::https://youtu.be/qj6lUC6K4VQ##Forbidden Planet, Main Titles Overture::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.015.png#Louis and Bebe Barron at their studio in New York::
+
+link::https://www.youtube.com/watch?v=k97JZHTCVbM&feature=youtu.be&t=2m7s##Forbidden Planet, Id monster scene::
+
+link::https://youtu.be/Zg_5Eb8coTU##Bebe Barron Interview in 1997::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.016.png#Milton Babbitt at Columbia-Princeton Electronic Music Center::
+
+link::https://www.youtube.com/watch?v=JManm091qWI##RCA Mark II Sound Synthesizer::
+
+link::https://www.youtube.com/watch?v=FfA470WVHws##Milton Babbit on Electronic Music::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.017.png#BBC Radiophonic Workshop::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.018.png#Daphne Oram with Oramics Machine::
+
+strong::Daphne Oram::
+list::
+##link::http://youtu.be/mJ08diPUv6A##Oramics feature in BBC Click::
+##link::http://youtu.be/8Oc0B6pkl4A?t=7m55s##Bird of Parallax, 1958::
+##link::http://youtu.be/eG17HiXyH9E##Tumblewash, 1962::
+##link::http://youtu.be/szMsZfxiGTk##Episode Metallic, 1965::
+::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.019.png#Delia Derbshire::
+
+link::https://youtu.be/8NPJ6GMXM3E##Dr Who Theme Tune::
+
+link::http://youtu.be/1utUQtvid-4##Delia Derbyshire feature in Inside Out::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.020.png#Delia Derbshire::
+
+strong::Delia Derbyshire::
+list::
+##link::http://youtu.be/3YudPg7cbR4##“Mattachin”, 1968::
+##link::https://youtu.be/jetzY-W78gg##"Ziwzih Ziwzih OO-OO-OO", 1968::
+##link::https://youtu.be/7NWClSykRgQ##“Love without Sound”, White Noise, 1969::
+##link::http://youtu.be/F9AkSI_UbIE##“The Wizard Laboratory”, 1972::
+##link::http://youtu.be/Hw7VNHbxtU8##“Dance for Noah”, 1971::
+::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.021.png#Robert Moog and Herbert Deutsch::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.022.png#Moog with Moogs::
+
+link::http://www.bbc.co.uk/programmes/p0154m0p##Moog Synthesiser Documentary, Tomorrow's World, BBC, 1969::
+
+link::http://yorsearch.york.ac.uk/44YORK:44YORK_ALMA_DS51273648950001381##Trevor Pinch, Analog Days: The Invention and Impact of the Moog Synthesiser, Harvard University Press, 2002::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.023.png#Don Buchla with Buchlas::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.024.png#Walter Carlos with Moog modular::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.025.png#Switched-On Bach album cover, 1968::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.026.png#Wendy Carlos with Moog modular::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.027.png#Sun Ra with Mini-moog Model B prototype::
+
+link::http://youtu.be/jWU5LNo1Mlc##Sun Ra, “The Design-Cosmos II”, My Brother the Wind, Vol. II, 1969::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.028.png#Bob Moog and Keith Emerson::
+
+link::https://youtu.be/TQQdYokbp4E?t=3m7s##Emerson Lake & Palmer, Live in Beat Club, 1970::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.029.png#Peter Zinovieff with EMS Synthi 100::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.031.png#Kraftwerk, 1970::
+
+link::https://youtu.be/A9R6bqcBPfc?t=13m40s##Kraftwerk, Live at Rockpalast, 1970::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.030.png#Kosmische Musik, 1972::
+
+strong::Krautrock bands::
+
+list::
+##Kraftwerk
+##Can
+##Neu!
+##Faust
+##Cluster
+##Krautrock
+##Amon Duul II
+##Tangerine Dream
+##PopolVuh
+##AshRaTempel
+##Cosmic Jokers
+::
+
+strong::Krautrock listening list::
+
+list::
+##“Oh Yeah”, Tago Mago, Can, 1971
+##“Spray”, Future Days, Can, 1973
+##“Moonshake”, Future Days, Can, 1973
+##“Quantum Physics”, Soon Over Babluma, Can, 1974
+##link::http://youtu.be/vQCTTvUqhOQ##“Hallogallo”::, Neu!, Neu!, 1972
+##link::http://youtu.be/vQCTTvUqhOQ?t=28m37s##“Negativland”::, Neu!, Neu!, 1972
+##link::https://youtu.be/-tnLLkct-_s?t=20s##“Für Immer”::, Neu! 2, Neu!, 1973
+##link::https://youtu.be/dmzY0HjcIsE##“Neuschnee”::, Neu! 2, Neu!, 1973
+##link::https://youtu.be/7VswPaZIuYI##“Isi”::, Neu! 75, Neu!, 1975
+##link::https://youtu.be/XENiO6TnteE##“Seeland”::, Neu! 75, Neu!, 1975
+##link::https://www.youtube.com/watch?v=7-ihFss88VU##“Hero”::, Neu! 75, Neu!, 1975
+##link::https://youtu.be/Epuga2JoF8A##“Why don’t you eat carrots”::, Faust, Faust, 1971
+##link::https://youtu.be/Yu9MehUlLgo##“Miss Fortune”::, Faust, Faust, 1971
+##link::https://youtu.be/ZNqpsP84fog##“So Far”::, So Far, Faust, 1972
+##link::https://youtu.be/GRxvQmTTz5I##“It’s A Rainy Day, Sunshine Girl”::  So Far, Faust, 1972
+##link::http://youtu.be/BrnBIMJhvnA##The Faust Tapes::, Faust, 1973
+##link::http://youtu.be/grvr4nK4AZA##“Jennifer”::, Faust IV, Faust, 1973
+##link::http://youtu.be/RzPUoG3M9gA##“Krautrock”::, Faust IV, Faust, 1973
+##link::https://youtu.be/RRVts1ONsyE##“Kuster 2”::, Klopfzeichen I, Kluster, 1969
+##link::http://youtu.be/bNy75iWo8yQ##Cluster II::, Cluster, 1972
+##link::http://youtu.be/bGByDwiiECw##Live at Coventry Cathedral::, Tangerine Dream, 1975
+::
+
+link::https://youtu.be/lnMhkkgWpG4##BBC documentary about Krautrock: “Krautrock: The Birth of Germany”::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.032.png#Kraftwerk's Kling Klang Studios::
+
+link::https://youtu.be/lnMhkkgWpG4?t=42m49s##Kraftwerk in “Krautrock: The Birth of Germany”::
+
+link::http://youtu.be/eaScyfSHc-Y##"Radioactivity", Radio-Activity, 1975::
+
+link::http://youtu.be/NkuUuBt7nrE##"Showroom Dummies", Trans Europa Express, 1975::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.033.png#The Man Machine album cover, 1978::
+
+link::http://youtu.be/VXa9tXcMhXQ ##"The Robots", The Man Machine, 1978::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.034.png#Kraftwerk, 1978::
+
+strong::Kraftwerk listening list::
+list::
+##link::https://youtu.be/s-wNx-6mMkU?t=20m35s##"Tone Float"::, Tone Float, Organisation, 1969
+##link::http://youtu.be/UsWChncYIdg##"Stratovarius"::, Kraftwerk, 1970
+##link::http://youtu.be/1TZ2fqjQtxE##"Megaherz"::, Kraftwerk, 1970
+##link::http://youtu.be/dMQfSN3vLzI?t=3m55s##"Von Himmel Hoch"::, Kraftwerk, 1970
+##link::http://youtu.be/MXnjC3w6v60##"Klingklang"::, Kraftwerk II, 1972
+##link::https://youtu.be/JjlxNIJDQss?t=8m58s##"Harmonika"::, Kraftwerk II, 1972
+##link::https://youtu.be/AI2Yk7w81oc##"Kristallo"::, Ralf und Florian, 1973
+##link::https://youtu.be/Gn6k1Lan89Y##"Tongebirge"::, Ralf und Florian, 1973
+##link::http://youtu.be/lCg7hPeUdvE?t=59s##"Tanzmusik"::, Ralf und Florian, 1973
+##link::https://youtu.be/LQ9-KDIdFn4##"Ananas Symphonie"::, Ralf und Florian, 1973
+##link::http://youtu.be/x-G28iyPtz0##"Autobahn"::, Autobahn, 1974
+##link::http://youtu.be/ZQasAWp8YRs##"Morgenspaziergang"::, Autobahn, 1974
+##link::http://youtu.be/eaScyfSHc-Y##"Radioactivity"::, Radio-Activity, 1975
+##link::http://youtu.be/WtnoarLbJMI##"Antenna"::, Radio-Activity, 1975
+##link::https://youtu.be/bkHwCAqugPY##"Transistor"::, Radio-Activity, 1975
+##link::http://youtu.be/XMVokT5e0zs##"Trans Europa Express"::, Trans Europa Express, 1975
+##link::http://youtu.be/NkuUuBt7nrE##"Showroom Dummies"::, Trans Europa Express, 1975
+##link::http://youtu.be/Q1wy3ioqqKw##"Metal on Metal"::, Trans Europa Express, 1975
+##link::http://youtu.be/VXa9tXcMhXQ##"The Robots"::, The Man Machine, 1978
+##link::https://youtu.be/CCKybI5BjEY##"The Model"::, The Man Machine, 1978
+##link::http://youtu.be/SXTBGB2cKAk##"Metropolis"::, The Man Machine, 1978
+##link::https://youtu.be/cQe9eK_4U0U##"The Man-Machine"::, The Man Machine, 1978
+##link::http://youtu.be/A5A47vzdR9M##"Home Computer"::, Computer World, 1981
+##link::http://youtu.be/UZiTr4hwHXI##"Pocket Calculator"::, Computer World, 1981
+##link::https://youtu.be/5ybQWD6N6Zo##"Computer World"::, Computer World, 1981
+##link::http://youtu.be/4YPiCeLwh5o##"Numbers"::, Computer World, 1981
+##link::http://youtu.be/LTZyXlLhvxs##Tour de France::, 1984
+##link::http://youtu.be/ps6wRHFdKdA##Tour de France (Alternate Video)::, 1984
+##link::http://youtu.be/q4yb9T2uCeI##"Techno Pop"::, Electric Café, 1984
+##link::http://youtu.be/UCgsYfwpot8##"Telephone Call"::, Electric Café, 1984
+##link::http://youtu.be/qG3UQuEE5aA##Kraftwerk Minimum Maximum (part1)::, 2005
+##link::http://youtu.be/gI556AzQXNM ##Kraftwerk Minimum Maximum (part2)::, 2005
+::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.035.png#Giorgio Moroder::
+
+link::https://youtu.be/PfAu8vqAHxc##Giorgio Moroder, "From Here To Eternity", From Here To Eternity, 1977::
+
+link::http://youtu.be/MTxeZ1HDg34##Moroder Promo::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.036.png#Giorgio Moroder and Donna Summer::
+
+link::https://youtu.be/Nm-ISatLDG0##Donna Summer and Giorgio Moroder, “I feel love”, I Remember Yesterday, 1977::
+
+link::http://youtu.be/u0-XN5jQ0XI?t=8s##Moroder/Summer TV feature from 1990s::
+
+link::https://youtu.be/zhl-Cs1-sG4##Daft Punk, Giorgio by Moroder, 2014::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.037.png#Haruomi Hosono, Yukijiro Takahashi, Ryuichi Sakamoto - Yellow Magic Orchestra (YMO)::
+
+link::https://youtu.be/LmtoiRyPS3o##YMO, Computer Games, 1978::
+
+link::https://www.youtube.com/watch?v=xB0cwq-C77g##YMO, “1000 Knifes”, BGM, 1981::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.038.png#Afrika Bambaataa::
+
+link::http://youtu.be/9h6pcqC6wrI##Afrika Bambaataa & the Soulsonic Force, "Planet Rock", 1982::
+
+link::http://youtu.be/2RJlYzBhLg4##Afrika Bambaataa & the Soulsonic Force, "Looking for the Perfect Beat", 1983::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.039.png#The Belleville Three: Juan Atkins, Derrick May and Kevin Saunderson::
+
+link::https://youtu.be/NoPs3yYbwKA?t=3m14s##Hi Tech Soul: The Creation of Techno Music, Gary Bredow, 2006::
+
+strong::Early Detriot Techno listening list::
+list::
+##link::https://youtu.be/IeF0xTdHPfA##“Sharevari”::, A Number of Names, 1981
+##link::https://youtu.be/VoEJ4PYVmAk##“Alleys Of Your Mind”::, Deep Space Music, Cybotron, 1981
+##link::https://youtu.be/aFA5vvbToMg##“Cosmic Cars”::, Deep Space Music, Cybotron, 1982
+##link::https://youtu.be/fGqiBFqWCTU##"“Clear”::, Deep Space Music, Cybotron, 1983
+##link::https://youtu.be/U3NfI9jbUGI##“Techno City”::, Cybotron, Fantasy City Inc, Cybotron, 1984
+##link::https://youtu.be/KNz01ty-kTQ##“No UFOs”::, Model 500, Metroplex Records, 1985
+##link::https://youtu.be/qvqDBXrk_N8##“Night Drive”::, Model 500, Metroplex Records, 1985
+##link::https://youtu.be/iGsGw5hV4HA##“Goodbye Kiss” ::, Eddie Fowlkes, Metroplex Records, 1985
+##link::https://youtu.be/0v5-PngmYEg##“Let’s Go (A Mix)”::, X-Ray,  Transmat Records, 1986
+##link::https://youtu.be/9EA4PeQe69w##“Triangle of Love”::, Kreem, Metroplex Records, 1986
+##link::https://youtu.be/2GnFvdaEl2Q##“Strings of Live”::, Rhythim Is Rhythim, Mayday, Michael James, Transmat Records, 1987
+::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.040.png#Roland TB-303::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.041.png#Roland  TR-808::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture2/Lecture2.042.png#Covers for Techno! The New Dance Sound Of Detroit and House Sound of Chicago::
+
+link::https://youtu.be/i3u7NUBfhk4##Techno! The New Dance Sound Of Detroit::, 10 Records, 1988
+
+link::https://www.youtube.com/watch?v=2XUDLyWudc8&list=PLEdckuRjpD4VkyQSbBrkMfO-2X_nHOeH3##The House Sound of Chicago::, BCM, 1988
+
+strong::Detroit Dance Shows::
+list::
+##link::https://youtu.be/OScrghVh15s?t=16s##Sharevari, The Scene, Detroit, 1982::
+##link::https://youtu.be/EarSRa19sZc##No Ufo's, The Scene, Detroit, 1985::
+##link::https://youtu.be/BgSxyoq84dE##New Dance Show: Clear, 1990::
+##link::https://youtu.be/_qnIcb7sPLg##New Dance Show: 80's Chicago House Trax Records, 1990::
+::
+
+strong::Early EDM Reading list:::
+list::
+##Dan Sicko, emphasis::Techno Rebels: The Renegades of Electronic Funk::, Wayne State University Press, 1999
+##Simon Reynolds, link::http://yorsearch.york.ac.uk/44YORK:44YORK_ALMA_DS21224626900001381 ##Energy Flash: A Journey through Rave Music and Dance Culture::, Faber and Faber, 1998
+##Kodwo Eshun, link::http://yorsearch.york.ac.uk/44YORK:44YORK_ALMA_DS21293606530001381 ##More Brilliant Than The Sun: Adventures in Sonic Fiction::, Quartet Books, 1998
+::
+

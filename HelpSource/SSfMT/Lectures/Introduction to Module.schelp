@@ -1,0 +1,68 @@
+TITLE:: Introduction to Module
+summary:: Software Systems for Music Technology
+categories:: Tutorials/SSfMT
+related:: SSfMT, SSfMT/Practicals/Modular Synthesis 1, SSfMT/Lectures/Electronic Music
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture1/Lecture1.002.png#SuperCollider code::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture1/Lecture1.003.png#SuperCollider Graphical User Interfaces (GUIs)::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture1/Lecture1.004.png#Live Coding with SuperCollider::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture1/Lecture1.005.png#Suzanne Ciani on a Buchla synthesiser::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture1/Lecture1.006.png#Lots of synths::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture1/Lecture1.007.png#Klaus Schultze, Electronic Musician - Tangerine Dream::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture1/Lecture1.008.png#Performance synthesisers: Prophet 8, Minibrute, Nord Lead 4, Korg PS60::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture1/Lecture1.009.png#Modular synthesiser: Moog Modular::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture1/Lecture1.010.png#Moog synthesiser modules::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture1/Lecture1.011.png#Zoom into Moog synthesiser modules::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture1/Lecture1.012.png#Buchla 200e with patch cords::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture1/Lecture1.013.png::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture1/Lecture1.014.png::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture1/Lecture1.015.png#Electronic Components::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture1/Lecture1.016.png#Mass-string model - wikipedia.org::
+
+image::https://upload.wikimedia.org/wikipedia/commons/2/2b/Damped_spring.gif#Underdamped spring–mass system - wikipedia.org::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture1/Circuit.png#Electronic circuit::
+
+image::https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Simple_harmonic_oscillator.gif/100px-Simple_harmonic_oscillator.gif#Oscillator - wikipedia.org::
+
+image::https://upload.wikimedia.org/wikipedia/commons/7/74/Simple_harmonic_motion_animation.gif#Harmonic Motion - wikipedia.org::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture1/Lecture1.017.png#Bicycle wheel - Oscillations::
+
+image::https://upload.wikimedia.org/wikipedia/commons/e/ea/Simple_Harmonic_Motion_Orbit.gif#Harmonic motion orbit - wikipedia.org::
+
+image::http://cdn1.askiitians.com/Images/201548-104410177-3862-im-1.gif#Represenation of phase in harmonic motion - wikipedia.org::
+
+image::https://upload.wikimedia.org/wikipedia/commons/a/a0/Simple_harmonic_motion_animation_2.gif#Phase difference in harmonic motion - wikipedia.org::
+
+image::https://upload.wikimedia.org/wikipedia/commons/8/80/Tuned_circuit_animation_3_300ms.gif#Electronic oscillator - LC circuit - wikipedia.org::
+
+image::https://upload.wikimedia.org/wikipedia/commons/1/1a/Fourier_series_square_wave_circles_animation.gif#Representation of odd harmonics (square wave) - wikipedia.org::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture1/Lecture1.018.png#Analog oscilloscope showing a sine wave::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture1/Lecture1.019.png#Moog Voltage Controlled Oscillator (VCO)::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture1/Lecture1.020.png#EMS VCS3::
+
+link::https://youtu.be/q67zcFBHGYQ##Putney VCS3 - demo 1973::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture1/Lecture1.021.png#VCS3 Interface::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture1/Lecture1.022.png#VCS3 Controls::
+
+image::http://www.federicoreuben.com/SSfMT/Lectures/Lecture1/Lecture1.023.png#EMS Studios in Putney, London::

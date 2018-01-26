@@ -1,0 +1,28 @@
+TITLE:: Modular Synthesis 2
+summary:: Software Systems for Music Technology
+categories:: Tutorials/SSfMT
+related:: SSfMT, SSfMT/Lectures/Electronic Music, SSfMT/Practicals/Modular Synthesis 1
+
+section::Download
+
+Follow these links to download the materials for this session:
+
+link::http://www.federicoreuben.com/SSfMT/Practicals/ModularSynthesis2.pdf##Download Slides::
+
+link::http://www.federicoreuben.com/SSfMT/Practicals/vcv_rack_patches.zip##Download VCV Rack Patches::
+
+subsection::SuperCollider IDE
+
+If from SuperCollider IDE, then you will have to follow the instructions below.
+
+If you are on a Mac or Linux, evaluate the following line of code. This will open your browser. Then click on emphasis::Modular Synthesis 2.pdf:: to download slides:
+code::
+"open http://www.federicoreuben.com/SSfMT/Practicals/ModularSynthesis2.pdf".unixCmd;
+"open :http://www.federicoreuben.com/SSfMT/Practicals/vcv_rack_patches.zip".unixCmd;
+::
+If you are on Windows, evaluate the following line of code. This will open your browser. Then click on emphasis::Modular Synthesis 2.pdf:: to download slides:
+code::
+"start http://www.federicoreuben.com/SSfMT/Practicals/ModularSynthesis2.pdf".unixCmd;
+"start :http://www.federicoreuben.com/SSfMT/Practicals/vcv_rack_patches.zip".unixCmd;
+::
+

@@ -1,0 +1,10 @@
+TITLE:: Task 5
+summary:: Formative Tasks
+categories:: Tutorials/SSfMT
+related:: SSfMT
+
+section:: Formative Task 5
+numberedlist::
+##Carefully go through link::SSfMT/Practicals/Playing with UGens 1:: by reading the material and evaluating/studying the code.
+##Go through code::Tour_of_UGens:: (select and emphasis::cmd+d::) until emphasis::Delays and Buffer UGens:: as indicated in the exercise at the end the previous material.
+::
